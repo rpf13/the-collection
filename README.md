@@ -1,9 +1,14 @@
-#The Collection
-The main purpose of this site is 
+# The Collection
+The Collection is a site, which allows a registered user to create and easily manage collections of his beloved items.
+
+The application satisfies the demand for a simple solution to easily inventory individual things in a beautifully designed catalog. This can be, for example, a collection of weapons, a collection of model cars or very practical things, such as spare parts for motorcycles. Everything is possible!
+
+A Collection consists of multiple individual items, where each item can be described and images can be uploaded to make the catalog more appealing.
+A search function gives the user the possibility to find the item of his desire inside a collection.
     
 Link to deployed site: 
 
-AM I RESPONSIVE
+    AM I RESPONSIVE
 
 ---
 
