@@ -23,11 +23,37 @@ The following stretch objectivse are meant as a "nice to have" feature and depen
 
 ### Color Scheme
 
-
 ### Typography
 
-## Features
+### Wireframes
 
+The Wireframes are the prototype of this project and show the base idea and the skeleton of the app. Some details may change during development.
+
+<details>
+<summary>Mobile Wireframe</summary>
+
+
+
+</details>
+
+<details>
+<summary>Desktop Wireframe</summary>
+
+![Main Site](docs/wireframes/dsktp/main_site.png)
+!Sign Up](docs/wireframes/dsktp/signup.png)
+![Login](docs/wireframes/dsktp/login.png)
+![Logout(docs/wireframes/dsktp/logout.png)
+![Collections](docs/wireframes/dsktp/collections.png)
+!Collection](docs/wireframes/dsktp/collection.png)
+![Item](docs/wireframes/dsktp/collection_item.png)
+![Contact](docs/wireframes/dsktp/contact.png)
+![About](docs/wireframes/dsktp/about.png)
+![Errors](docs/wireframes/dsktp/errors.png)
+
+</details>
+
+
+## Features
 
 ### Features Left to Implement
 
