@@ -45,11 +45,11 @@ The Wireframes are the prototype of this project and show the base idea and the 
 <summary>Desktop Wireframe</summary>
 
 ![Main Site](docs/wireframes/dsktp/main_site.png)
-!Sign Up](docs/wireframes/dsktp/signup.png)
+![Sign Up](docs/wireframes/dsktp/signup.png)
 ![Login](docs/wireframes/dsktp/login.png)
-![Logout(docs/wireframes/dsktp/logout.png)
+![Logout](docs/wireframes/dsktp/logout.png)
 ![Collections](docs/wireframes/dsktp/collections.png)
-!Collection](docs/wireframes/dsktp/collection.png)
+![Collection](docs/wireframes/dsktp/collection.png)
 ![Item](docs/wireframes/dsktp/collection_item.png)
 ![Contact](docs/wireframes/dsktp/contact.png)
 ![About](docs/wireframes/dsktp/about.png)
