@@ -2,9 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-# Create your models here.
 
-
+# Class to create a new collection
 class Collection(models.Model):
     collection_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -20,6 +19,7 @@ class Collection(models.Model):
         return self.collection_name
 
 
+# Class to create a new item in a collection
 class Item(models.Model):
     item_id = models.AutoField(primary_key=True)
     item_name = models.CharField(max_length=100)
@@ -36,6 +36,7 @@ class Item(models.Model):
         return self.item_name
 
 
+# Class to add image to an item
 class Image(models.Model):
     image_id = models.AutoField(primary_key=True)
     item_id = models.ForeignKey(Item, on_delete=models.CASCADE)
