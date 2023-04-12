@@ -41,11 +41,28 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
     'collection',
 ]
+
+# Site ID is required for Django to handle mutliple sites from one DB
+# In our case it is only one site
+SITE_ID = 1
+
+# We have to add login / logout redirect URL so after login, we will get
+# redirected to the homepage, the root directory
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+# To prevent 500 errors during login and registration we add this line.
+# Login and registr. will work without providing email
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
