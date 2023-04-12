@@ -20,6 +20,5 @@ from collection import views as collection_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', collection_views.home, name='home'),
-    # path('', include('collection.urls'), name='collection_urls'),
     path('accounts/', include('allauth.urls')),
 ]
