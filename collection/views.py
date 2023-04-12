@@ -1,13 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Collection
 
 
 # Generic view to verify allauth - TO-BE-DELETED
-def home(request):
-    return HttpResponse("Welcome to my Django app")
+# def home(request):
+#     return HttpResponse("Welcome to my Django app")
+
+
+# Home view to display main site, unauthorised
+class HomeView(TemplateView):
+    template_name = 'home.html'
 
 
 # View to display collections list of a user
