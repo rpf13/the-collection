@@ -57,7 +57,7 @@ SITE_ID = 1
 
 # We have to add login / logout redirect URL so after login, we will get
 # redirected to the homepage, the root directory
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'collection_list'
 LOGOUT_REDIRECT_URL = '/'
 
 # To prevent 500 errors during login and registration we add this line.

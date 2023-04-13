@@ -1,8 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+# check if the next two imports can be combined
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 from .models import Collection
 
 
@@ -11,12 +15,18 @@ from .models import Collection
 #     return HttpResponse("Welcome to my Django app")
 
 
-# Home view to display main site, unauthorised
+# Home view to display main site
 class HomeView(TemplateView):
     template_name = 'home.html'
 
+    def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect(reverse_lazy('home'))
+        return super().get(request, *args, **kwargs)
 
-# View to display collections list of a user
+
+# View to display collections list of authorized user
+@method_decorator(login_required, name='dispatch')
 class CollectionListView(LoginRequiredMixin, ListView):
     model = Collection
     template_name = 'collection_list.html'

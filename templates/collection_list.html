@@ -2,4 +2,31 @@
 
 {% block content %}
 
+<div class="container-fluid bg-dark text-light">
+    <div class="row">
+      <div class="col-md-12 text-center py-5">
+        <h1>My Collections</h1>
+      </div>
+    </div>
+    <div class="row">
+      {% for collection in collections %}
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <img class="card-img-top" src="{{ collection.image.url }}" alt="Card image">
+          <div class="card-body">
+            <h5 class="card-title">{{ collection.collection_name }}</h5>
+            <p class="card-text">{{ collection.description }}</p>
+            <a href="{% url 'collection:collection_detail' collection.pk %}" class="btn btn-primary">View</a>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <div class="col-md-12 text-center">
+        <p class="lead">You haven't created any collections yet.</p>
+        <a href="#" class="btn btn-primary">Create a Collection</a>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+
 {% endblock %}
