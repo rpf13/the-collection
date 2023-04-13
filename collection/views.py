@@ -3,6 +3,7 @@ from django.http import HttpResponse
 # check if the next two imports can be combined
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
+from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
@@ -15,7 +16,7 @@ from .models import Collection
 #     return HttpResponse("Welcome to my Django app")
 
 
-# Home view to display main site
+# Home view to display main site - unauthorized
 class HomeView(TemplateView):
     template_name = 'home.html'
 
@@ -37,3 +38,16 @@ class CollectionListView(LoginRequiredMixin, ListView):
         return Collection.objects.filter(
             user=self.request.user
             ).order_by('-created_on')
+
+
+# View to create a new collection - authorized
+@method_decorator(login_required, name='dispatch')
+class CollectionCreateView(LoginRequiredMixin, CreateView):
+    model = Collection
+    fields = ['collection_name', 'description', 'image']
+    template_name = 'collection_create.html'
+    success_url = reverse_lazy('collection_list')
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
