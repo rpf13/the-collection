@@ -3,7 +3,6 @@ from . import views
 from django.urls import path
 from .views import HomeView
 
-app_name = 'collection'
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
