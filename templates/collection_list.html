@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
+<!-- required to load the static template tag library -->
+{% load static %}
+
 {% block content %}
 
 <div class="container-fluid bg-dark text-light">
@@ -9,10 +12,14 @@
       </div>
     </div>
     <div class="row">
-      {% for collection in collections %}
+      {% for collection in object_list %}
       <div class="col-md-4 mb-3">
-        <div class="card">
-          <img class="card-img-top" src="{{ collection.image.url }}" alt="Card image">
+        <div class="card mb-4 shadow-sm">
+          {% if "placeholder" in collection.image.url %}
+            <img class="card-img-top" src="{% static 'images/101_collection_default.webp' %}" alt="{{ collection.name }}">
+          {% else %}
+            <img class="card-img-top" src="{{ collection.image.url }}" alt="{{ collection.name }}">
+          {% endif %}
           <div class="card-body">
             <h5 class="card-title text-dark">{{ collection.collection_name }}</h5>
             <p class="card-text text-dark">{{ collection.description }}</p>

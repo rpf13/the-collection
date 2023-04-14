@@ -77,6 +77,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'main.urls'
 
+# The context_processor.static is required to use the 'static' template tag
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -87,6 +88,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.static',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
