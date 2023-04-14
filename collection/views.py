@@ -23,7 +23,7 @@ class HomeView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect(reverse_lazy('home'))
+            return redirect(reverse_lazy('collection_list'))
         return super().get(request, *args, **kwargs)
 
 
