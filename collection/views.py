@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
+from django.views.generic.detail import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
@@ -51,3 +52,22 @@ class CollectionCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+
+# View to display the items of a collection - authorized
+# queryset method ensures to display only items of that
+# particular user
+@method_decorator(login_required, name='dispatch')
+class CollectionDetailView(LoginRequiredMixin, DetailView):
+    model = Collection
+    template_name = 'collection_detail.html'
+    context_object_name = 'collection'
+
+    def get_queryset(self):
+        return Collection.objects.filter(user=self.request.user)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        items = self.object.item_set.all()
+        context['items'] = items
+        return context
