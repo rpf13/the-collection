@@ -23,7 +23,11 @@
           <div class="card-body">
             <h5 class="card-title text-dark">{{ collection.collection_name }}</h5>
             <p class="card-text text-dark">{{ collection.description }}</p>
-            <a href="{% url 'collection_detail' collection.pk %}" class="btn btn-primary">View</a>
+            <div class="btn-group" role="group" aria-label="Collection Actions">
+              <a href="{% url 'collection_detail' collection.pk %}" class="btn btn-primary mr-2">View</a>
+              <a href="{% url 'collection_update' collection.pk %}" class="btn btn-secondary mr-2">Update</a>
+              <a href="{% url 'collection_delete' collection.pk %}" class="btn btn-danger">Delete</a>
+            </div>
           </div>
         </div>
       </div>

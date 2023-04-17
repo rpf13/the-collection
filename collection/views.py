@@ -3,9 +3,9 @@ from django.http import HttpResponse
 # check if the next two imports can be combined
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
@@ -52,6 +52,38 @@ class CollectionCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+
+# View to update existing collection - authorized
+@method_decorator(login_required, name='dispatch')
+class CollectionUpdateView(LoginRequiredMixin, UserPassesTestMixin,
+                           UpdateView):
+    model = Collection
+    fields = ['collection_name', 'description', 'image']
+    template_name = 'collection_update.html'
+    success_url = reverse_lazy('collection_list')
+
+    # Method to verify if updating user is the one who created it
+    def test_func(self):
+        collection = self.get_object()
+        if self.request.user == collection.user:
+            return True
+        return False
+
+
+# View to delete existing collection - authorized
+@method_decorator(login_required, name='dispatch')
+class CollectionDeleteView(LoginRequiredMixin, UserPassesTestMixin,
+                           DeleteView):
+    model = Collection
+    template_name = 'collection_delete.html'
+    success_url = reverse_lazy('collection_list')
+
+    def test_func(self):
+        collection = self.get_object()
+        if self.request.user == collection.user:
+            return True
+        return False
 
 
 # View to display the items of a collection - authorized
