@@ -9,7 +9,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from .models import Collection
+from django.shortcuts import get_object_or_404
+from .models import Collection, Item
 
 
 # Generic view to verify allauth - TO-BE-DELETED
@@ -103,3 +104,20 @@ class CollectionDetailView(LoginRequiredMixin, DetailView):
         items = self.object.item_set.all()
         context['items'] = items
         return context
+
+
+# View to create a new item - authorized
+@method_decorator(login_required, name='dispatch')
+class ItemCreateView(LoginRequiredMixin, CreateView):
+    model = Item
+    fields = ['item_name', 'description', 'image']
+    template_name = 'item_create.html'
+
+    def form_valid(self, form):
+        collection = get_object_or_404(Collection, pk=self.kwargs.get('pk'))
+        form.instance.collection = collection
+        return super().form.valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy(
+            'collection_detail', kwargs={'pk': self.kwargs.get('pk')})

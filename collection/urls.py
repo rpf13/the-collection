@@ -3,7 +3,7 @@ from . import views
 from django.urls import path
 from .views import (
     HomeView, CollectionListView, CollectionCreateView, CollectionDetailView,
-    CollectionUpdateView, CollectionDeleteView
+    CollectionUpdateView, CollectionDeleteView, ItemCreateView
     )
 
 
@@ -26,5 +26,8 @@ urlpatterns = [
         'collection/<int:pk>', CollectionDeleteView.as_view(),
         name='collection_delete'
     ),
-    # path('', views.home, name='home'),
+    path(
+        'collection/<int:pk>/create_item/', ItemCreateView.as_view(),
+        name='item_create'
+    ),
 ]
