@@ -68,6 +68,8 @@ Django AllAuth is used to create a user authentication system.
 
 ### Features Left to Implement
 
+- I had to step back from the idea of having multiple images per item, since this has increased the level of complexity for the whole project quite a lot. Since I have to deliver MVP, I will let this feature for future implementation. I had to adapt the db model to reflect this.
+
 ---
 
 ## Technologies Used

@@ -26,6 +26,7 @@ class Item(models.Model):
     collection_id = models.ForeignKey(Collection, on_delete=models.CASCADE)
     reference = models.CharField(max_length=100)
     description = models.CharField(max_length=200)
+    image = CloudinaryField('image', default='placeholder')
     details = models.TextField()
     added_on = models.DateTimeField(auto_now_add=True)
 
@@ -34,10 +35,3 @@ class Item(models.Model):
 
     def __str__(self):
         return self.item_name
-
-
-# Class to add image to an item
-class Image(models.Model):
-    image_id = models.AutoField(primary_key=True)
-    item_id = models.ForeignKey(Item, on_delete=models.CASCADE)
-    image = CloudinaryField('image', default='placeholder')
