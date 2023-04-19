@@ -4,49 +4,39 @@
 {% load static %}
 
 {% block content %}
-  <div class="container">
-      <h2 class="my-3">{{ collection.collection_name }}</h2>
-      <p>{{ collection.description }}</p>
 
-      <div class="my-3">
-          <a href="#" class="btn btn-primary">Edit</a>
+<div class="container-fluid bg-dark text-light">
+    <div class="row">
+      <div class="col-md-12 text-center py-5">
+        <h1>{{ collection.collection_name }}</h1>
       </div>
-
-      <hr>
-
-      {% if items %}
-      <div class="row">
-          {% for item in items %}
-          <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                  {% if item.image %}
-                  <img class="card-img-top" src="{{ item.image.url }}" alt="{{ item.title }}">
-                  {% else %}
-                  <div style="height: 225px; background-color: #eee;"></div>
-                  {% endif %}
-                  <div class="card-body">
-                      <h5 class="card-title">{{ item.title }}</h5>
-                      <p class="card-text">{{ item.description }}</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group">
-                              <a href="#"
-                                  class="btn btn-sm btn-outline-secondary">View</a>
-                              <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
-                          </div>
-                          <small class="text-muted">{{ item.created_on|date }}</small>
-                      </div>
-                  </div>
-              </div>
+    </div>
+    <div class="row">
+      {% for item in items %}
+      <div class="col-md-4 mb-3">
+        <div class="card mb-4 shadow-sm">
+          {% if "placeholder" in item.image.url %}
+            <img class="card-img-top" src="{% static 'images/102_item_default.webp' %}" alt="{{ item.name }}">
+          {% else %}
+            <img class="card-img-top" src="{{ item.image.url }}" alt="{{ item.name }}">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title text-dark">{{ item.item_name }}</h5>
+            <p class="card-text text-dark">{{ item.description }}</p>
+            <div class="btn-group" role="group" aria-label="Item Actions">
+              <a href="#" class="btn btn-primary mr-2">View</a>
+              <a href="#" class="btn btn-secondary mr-2">Update</a>
+              <a href="#" class="btn btn-danger">Delete</a>
+            </div>
           </div>
-          {% endfor %}
+        </div>
       </div>
-      {% else %}
-      <div class="alert alert-primary" role="alert">
-          You haven't created any items yet for this collection.
+      {% empty %}
+      <div class="col-md-12 text-center">
+        <p class="lead">You haven't created any items yet.</p>
+        <a href="{% url 'item_create' collection.pk %}" class="btn btn-primary">Create a new Item</a>
       </div>
-      <div class="my-3">
-          <a href="{% url 'item_create' pk=collection.pk %}" class="btn btn-primary">Create an item</a>
-      </div>
-      {% endif %}
-  </div>
+      {% endfor %}
+    </div>
+</div>
 {% endblock %}
