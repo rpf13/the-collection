@@ -115,8 +115,8 @@ class ItemCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         collection = get_object_or_404(Collection, pk=self.kwargs.get('pk'))
-        form.instance.collection = collection
-        return super().form.valid(form)
+        form.instance.collection_id = collection
+        return super().form_valid(form)
 
     def get_success_url(self):
         return reverse_lazy(
