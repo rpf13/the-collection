@@ -2,10 +2,10 @@
 
 {% block content %}
 <h2 class="my-3">Delete Collection</h2>
-<p>Are you sure you want to delete "{{ collection.collection_name }}"?</p>
+<p>Are you sure you want to delete the "{{ collection.collection_name }}" collection and all it's items?</p>
 <form method="post">
   {% csrf_token %}
   <button type="submit" class="btn btn-danger">Delete</button>
-  <a href="{% url 'collection_detail' collection.pk %}" class="btn btn-secondary">Cancel</a>
+  <a href="{% url 'collection_list' %}" class="btn btn-secondary">Cancel</a>
 </form>
 {% endblock %}

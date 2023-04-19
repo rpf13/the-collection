@@ -6,6 +6,6 @@
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit" class="btn btn-primary">Save changes</button>
-  <a href="{% url 'collection_update' collection.pk %}" class="btn btn-secondary">Cancel</a>
+  <a href="{% url 'collection_list' %}" class="btn btn-secondary">Cancel</a>
 </form>
 {% endblock %}
