@@ -110,7 +110,7 @@ class CollectionDetailView(LoginRequiredMixin, DetailView):
 @method_decorator(login_required, name='dispatch')
 class ItemCreateView(LoginRequiredMixin, CreateView):
     model = Item
-    fields = ['item_name', 'description', 'image']
+    fields = ['item_name', 'description', 'image', 'details']
     template_name = 'item_create.html'
 
     def form_valid(self, form):
@@ -121,3 +121,49 @@ class ItemCreateView(LoginRequiredMixin, CreateView):
     def get_success_url(self):
         return reverse_lazy(
             'collection_detail', kwargs={'pk': self.kwargs.get('pk')})
+
+
+# View to update existing item - authorized
+@method_decorator(login_required, name='dispatch')
+class ItemUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Item
+    fields = ['item_name', 'description', 'image', 'details']
+    template_name = 'item_update.html'
+
+    def get_success_url(self):
+        return reverse_lazy(
+            'item_detail', kwargs={'pk': self.object.pk})
+
+    # Method to verify if updating user is the one who created it
+    def test_func(self):
+        item = self.get_object()
+        if self.request.user == item.collection.user:
+            return True
+        return False
+
+
+# View to delete existing item - authorized
+@method_decorator(login_required, name='dispatch')
+class ItemDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Item
+    template_name = 'item_delete.html'
+
+    # Method to redirect after successful deletion
+    def get_success_url(self):
+        return reverse_lazy(
+            'collection_detail', kwargs={'pk': self.object.collection.pk})
+
+    # Method to verify if updating user is the one who created it
+    def test_func(self):
+        item = self.get_object()
+        if self.request.user == item.collection.user:
+            return True
+        return False
+
+
+# View to display the details of an item - authorized
+@method_decorator(login_required, name='dispatch')
+class ItemDetailView(LoginRequiredMixin, DetailView):
+    model = Item
+    template_name = 'item_detail.html'
+    context_object_name = 'item'

@@ -2,9 +2,17 @@
 from . import views
 from django.urls import path
 from .views import (
-    HomeView, CollectionListView, CollectionCreateView, CollectionDetailView,
-    CollectionUpdateView, CollectionDeleteView, ItemCreateView
-    )
+    HomeView,
+    CollectionListView,
+    CollectionCreateView,
+    CollectionDetailView,
+    CollectionUpdateView,
+    CollectionDeleteView,
+    ItemCreateView,
+    ItemUpdateView,
+    ItemDeleteView,
+    ItemDetailView,
+)
 
 
 urlpatterns = [
@@ -30,4 +38,16 @@ urlpatterns = [
         'collection/<int:pk>/create_item/', ItemCreateView.as_view(),
         name='item_create'
     ),
+    path(
+        'items/<int:pk>/update/', ItemUpdateView.as_view(),
+        name='item_update'
+        ),
+    path(
+        'items/<int:pk>/delete/', ItemDeleteView.as_view(),
+        name='item_delete'
+        ),
+    path(
+        'items/<int:pk>/', ItemDetailView.as_view(),
+        name='item_detail'
+        ),
 ]
