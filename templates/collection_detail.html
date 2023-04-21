@@ -12,6 +12,13 @@
       </div>
     </div>
     <div class="row">
+      <div class="col-md-12 text-center">
+        <a href="{% url 'collection_update' pk=collection.pk %}" class="btn btn-primary mb-2">Edit Collection</a>
+        <a href="{% url 'item_create' pk=collection.pk %}" class="btn btn-primary mb-2">Add Item</a>
+        <a href="{% url 'collection_list' %}" class="btn btn-secondary mb-2">My Collections</a>
+      </div>
+    </div>
+    <div class="row">
       {% for item in items %}
       <div class="col-md-4 mb-3">
         <div class="card mb-4 shadow-sm">

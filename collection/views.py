@@ -113,6 +113,12 @@ class ItemCreateView(LoginRequiredMixin, CreateView):
     fields = ['item_name', 'description', 'image', 'details']
     template_name = 'item_create.html'
 
+    # get context data used for the cancel button
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['collection_id'] = self.kwargs.get('pk')
+        return context
+
     def form_valid(self, form):
         collection = get_object_or_404(Collection, pk=self.kwargs.get('pk'))
         form.instance.collection_id = collection
