@@ -24,9 +24,9 @@
             <h5 class="card-title text-dark">{{ item.item_name }}</h5>
             <p class="card-text text-dark">{{ item.description }}</p>
             <div class="btn-group" role="group" aria-label="Item Actions">
-              <a href="#" class="btn btn-primary mr-2">View</a>
-              <a href="#" class="btn btn-secondary mr-2">Update</a>
-              <a href="#" class="btn btn-danger">Delete</a>
+              <a href="{% url 'item_detail' item.pk %}" class="btn btn-primary mr-2">View</a>
+              <a href="{% url 'item_update' item.pk %}" class="btn btn-secondary mr-2">Update</a>
+              <a href="{% url 'item_delete' item.pk %}" class="btn btn-danger">Delete</a>
             </div>
           </div>
         </div>

@@ -137,7 +137,7 @@ class ItemUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     # Method to verify if updating user is the one who created it
     def test_func(self):
         item = self.get_object()
-        if self.request.user == item.collection.user:
+        if self.request.user == item.collection_id.user:
             return True
         return False
 
@@ -167,3 +167,8 @@ class ItemDetailView(LoginRequiredMixin, DetailView):
     model = Item
     template_name = 'item_detail.html'
     context_object_name = 'item'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['collection_id'] = self.object.collection_id
+        return context
