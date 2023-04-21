@@ -10,6 +10,7 @@ from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
+from django.core.paginator import Paginator
 from .models import Collection, Item
 
 
@@ -95,6 +96,7 @@ class CollectionDetailView(LoginRequiredMixin, DetailView):
     model = Collection
     template_name = 'collection_detail.html'
     context_object_name = 'collection'
+    paginate_by = 6
 
     def get_queryset(self):
         return Collection.objects.filter(user=self.request.user)
@@ -102,7 +104,12 @@ class CollectionDetailView(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         items = self.object.item_set.all()
-        context['items'] = items
+        paginator = Paginator(items, self.paginate_by)
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context['items'] = page_obj
+        context['is_paginated'] = True if paginator.num_pages > 1 else False
+        context['page_obj'] = page_obj
         return context
 
 
