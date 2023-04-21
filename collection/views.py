@@ -151,12 +151,12 @@ class ItemDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     # Method to redirect after successful deletion
     def get_success_url(self):
         return reverse_lazy(
-            'collection_detail', kwargs={'pk': self.object.collection.pk})
+            'collection_detail', kwargs={'pk': self.object.collection_id.pk})
 
     # Method to verify if updating user is the one who created it
     def test_func(self):
         item = self.get_object()
-        if self.request.user == item.collection.user:
+        if self.request.user == item.collection_id.user:
             return True
         return False
 
