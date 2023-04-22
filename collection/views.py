@@ -11,6 +11,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator
+from django.db.models import Q
 from .models import Collection, Item
 
 
@@ -103,10 +104,26 @@ class CollectionDetailView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        items = self.object.item_set.all()
+        context['collection_id'] = self.kwargs.get('pk')
+
+        # code for search option of items
+        search_query = self.request.GET.get('search', '')
+
+        if search_query:
+            items = self.object.item_set.filter(
+                Q(item_name__icontains=search_query)
+                | Q(description__icontains=search_query)
+                )
+            context['search_performed'] = True
+        else:
+            items = self.object.item_set.all()
+            context['search_performed'] = False
+
+        # code for site pagination
         paginator = Paginator(items, self.paginate_by)
         page_number = self.request.GET.get('page')
         page_obj = paginator.get_page(page_number)
+
         context['items'] = page_obj
         context['is_paginated'] = True if paginator.num_pages > 1 else False
         context['page_obj'] = page_obj

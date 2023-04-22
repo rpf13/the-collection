@@ -19,15 +19,28 @@
           <a href="{% url 'collection_list' %}" class="btn btn-secondary mb-2">My Collections</a>
         </div>
       </div>
+      <!-- Add the search form below the buttons -->
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <form method="get" class="form-inline d-inline-flex justify-content-center mb-4">
+            <div class="input-group">
+              <input type="text" class="form-control" name="search" value="{{ request.GET.search }}" placeholder="Search items...">
+              <div class="input-group-append">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     {% endif %}
       <div class="row">
         {% for item in page_obj %}
         <div class="col-md-4 mb-3">
           <div class="card mb-4 shadow-sm">
             {% if "placeholder" in item.image.url %}
-              <img class="card-img-top" src="{% static 'images/102_item_default.webp' %}" alt="Image Placeholder">
+            <img class="card-img-top" src="{% static 'images/102_item_default.webp' %}" alt="Image Placeholder">
             {% else %}
-              <img class="card-img-top" src="{{ item.image.url }}" alt="{{ item.item_name }}">
+            <img class="card-img-top" src="{{ item.image.url }}" alt="{{ item.item_name }}">
             {% endif %}
             <div class="card-body">
               <h5 class="card-title text-dark">{{ item.item_name }}</h5>
@@ -41,12 +54,20 @@
           </div>
         </div>
         {% empty %}
+        <!-- create condition for search, if nothing is found -->
+        {% if search_performed %}
+        <div class="col-md-12 text-center">
+          <p class="lead">No search results.</p>
+          <a href="{% url 'collection_detail' collection_id %}" class="btn btn-secondary">Cancel</a>
+        </div>
+        {% else %}
         <div class="col-md-12 text-center">
           <p class="lead">You haven't created any items yet.</p>
           <a href="{% url 'item_create' collection.pk %}" class="btn btn-primary">Create a new Item</a>
         </div>
+        {% endif %}
         {% endfor %}
-    </div>
+      </div>
     <!-- pagination code used for the items -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
