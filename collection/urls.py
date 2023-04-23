@@ -12,6 +12,9 @@ from .views import (
     ItemUpdateView,
     ItemDeleteView,
     ItemDetailView,
+    ForbiddenView,
+    NotFoundView,
+    ServerErrorView,
 )
 
 
@@ -50,4 +53,16 @@ urlpatterns = [
         'items/<int:pk>/', ItemDetailView.as_view(),
         name='item_detail'
         ),
+    path(
+        '403/', ForbiddenView.as_view(),
+        name='403'
+    ),
+    path(
+        '404/', NotFoundView.as_view(),
+        name='404'
+    ),
+    path(
+        '500', ServerErrorView.as_view(),
+        name='500'
+    ),
 ]

@@ -5,6 +5,7 @@ from django.views.generic import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
+from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
@@ -202,3 +203,20 @@ class ItemDetailView(LoginRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
         context['collection_id'] = self.object.collection_id
         return context
+
+
+# Error handling views for 403, 404, 500 errors
+
+class ForbiddenView(View):
+    def get(self, request):
+        return render(request, "403.html", status=403)
+
+
+class NotFoundView(View):
+    def get(self, request):
+        return render(request, "404.html", status=404)
+
+
+class ServerErrorView(View):
+    def get(self, request):
+        return render(request, "500.html", status=500)
