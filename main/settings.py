@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'collection',
+    'contact',
 ]
 
 # Site ID is required for Django to handle mutliple sites from one DB

@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('collection.urls')),
     # path('', collection_views.home, name='home'),
     path('accounts/', include('allauth.urls')),
+    path('contact/', include('contact.urls')),
 ]
