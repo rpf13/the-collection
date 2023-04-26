@@ -14,7 +14,7 @@ from .forms import ContactForm
 # Views for the contact form mail functionality
 @method_decorator(login_required, name='dispatch')
 class SendEmailView(FormView):
-    template_name = 'contact.html'
+    template_name = 'contact/contact.html'
     form_class = ContactForm
     success_url = reverse_lazy('email_success')
 
@@ -35,4 +35,4 @@ class SendEmailView(FormView):
 
 @method_decorator(login_required, name='dispatch')
 class EmailSuccessView(TemplateView):
-    template_name = 'success.html'
+    template_name = 'contact/success.html'
