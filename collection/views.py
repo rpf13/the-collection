@@ -35,7 +35,7 @@ class HomeView(TemplateView):
 @method_decorator(login_required, name='dispatch')
 class CollectionListView(LoginRequiredMixin, ListView):
     model = Collection
-    template_name = 'collection_list.html'
+    template_name = 'collection/collection_list.html'
     context_object_name = 'collections'
     paginate_by = 6
 
@@ -50,7 +50,7 @@ class CollectionListView(LoginRequiredMixin, ListView):
 class CollectionCreateView(LoginRequiredMixin, CreateView):
     model = Collection
     fields = ['collection_name', 'description', 'image']
-    template_name = 'collection_create.html'
+    template_name = 'collection/collection_create.html'
     success_url = reverse_lazy('collection_list')
 
     def form_valid(self, form):
@@ -64,7 +64,7 @@ class CollectionUpdateView(LoginRequiredMixin, UserPassesTestMixin,
                            UpdateView):
     model = Collection
     fields = ['collection_name', 'description', 'image']
-    template_name = 'collection_update.html'
+    template_name = 'collection/collection_update.html'
     success_url = reverse_lazy('collection_list')
 
     # Method to verify if updating user is the one who created it
@@ -80,7 +80,7 @@ class CollectionUpdateView(LoginRequiredMixin, UserPassesTestMixin,
 class CollectionDeleteView(LoginRequiredMixin, UserPassesTestMixin,
                            DeleteView):
     model = Collection
-    template_name = 'collection_delete.html'
+    template_name = 'collection/collection_delete.html'
     success_url = reverse_lazy('collection_list')
 
     def test_func(self):
@@ -96,7 +96,7 @@ class CollectionDeleteView(LoginRequiredMixin, UserPassesTestMixin,
 @method_decorator(login_required, name='dispatch')
 class CollectionDetailView(LoginRequiredMixin, DetailView):
     model = Collection
-    template_name = 'collection_detail.html'
+    template_name = 'collection/collection_detail.html'
     context_object_name = 'collection'
     paginate_by = 6
 
@@ -136,7 +136,7 @@ class CollectionDetailView(LoginRequiredMixin, DetailView):
 class ItemCreateView(LoginRequiredMixin, CreateView):
     model = Item
     fields = ['item_name', 'description', 'image', 'details']
-    template_name = 'item_create.html'
+    template_name = 'collection/item_create.html'
 
     # get context data used for the cancel button
     def get_context_data(self, **kwargs):
@@ -159,7 +159,7 @@ class ItemCreateView(LoginRequiredMixin, CreateView):
 class ItemUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Item
     fields = ['item_name', 'description', 'image', 'details']
-    template_name = 'item_update.html'
+    template_name = 'collection/item_update.html'
 
     def get_success_url(self):
         return reverse_lazy(
@@ -177,7 +177,7 @@ class ItemUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 @method_decorator(login_required, name='dispatch')
 class ItemDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Item
-    template_name = 'item_delete.html'
+    template_name = 'collection/item_delete.html'
 
     # Method to redirect after successful deletion
     def get_success_url(self):
@@ -196,7 +196,7 @@ class ItemDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 @method_decorator(login_required, name='dispatch')
 class ItemDetailView(LoginRequiredMixin, DetailView):
     model = Item
-    template_name = 'item_detail.html'
+    template_name = 'collection/item_detail.html'
     context_object_name = 'item'
 
     def get_context_data(self, **kwargs):
@@ -205,23 +205,7 @@ class ItemDetailView(LoginRequiredMixin, DetailView):
         return context
 
 
-# Error handling views for 403, 404, 500 errors
-class ForbiddenView(View):
-    def get(self, request):
-        return render(request, "403.html", status=403)
-
-
-class NotFoundView(View):
-    def get(self, request):
-        return render(request, "404.html", status=404)
-
-
-class ServerErrorView(View):
-    def get(self, request):
-        return render(request, "500.html", status=500)
-
-
 # simple view for about site
 @method_decorator(login_required, name='dispatch')
 class AboutView(TemplateView):
-    template_name = 'about.html'
+    template_name = 'collection/about.html'
