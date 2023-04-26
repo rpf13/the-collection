@@ -206,7 +206,6 @@ class ItemDetailView(LoginRequiredMixin, DetailView):
 
 
 # Error handling views for 403, 404, 500 errors
-
 class ForbiddenView(View):
     def get(self, request):
         return render(request, "403.html", status=403)
@@ -220,3 +219,9 @@ class NotFoundView(View):
 class ServerErrorView(View):
     def get(self, request):
         return render(request, "500.html", status=500)
+
+
+# simple view for about site
+@method_decorator(login_required, name='dispatch')
+class AboutView(TemplateView):
+    template_name = 'about.html'

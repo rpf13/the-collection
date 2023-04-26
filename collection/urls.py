@@ -15,6 +15,7 @@ from .views import (
     ForbiddenView,
     NotFoundView,
     ServerErrorView,
+    AboutView,
 )
 
 
@@ -62,7 +63,11 @@ urlpatterns = [
         name='404'
     ),
     path(
-        '500', ServerErrorView.as_view(),
+        '500/', ServerErrorView.as_view(),
         name='500'
+    ),
+    path(
+        'about/', AboutView.as_view(),
+        name='about'
     ),
 ]
