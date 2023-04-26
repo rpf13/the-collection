@@ -9,6 +9,6 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
 ]
 
+handler403 = "main.views.handler403"
 handler404 = "main.views.handler404"
-handler404 = "main.views.handler403"
 handler500 = "main.views.handler500"
