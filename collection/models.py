@@ -24,7 +24,6 @@ class Item(models.Model):
     item_id = models.AutoField(primary_key=True)
     item_name = models.CharField(max_length=100)
     collection_id = models.ForeignKey(Collection, on_delete=models.CASCADE)
-    reference = models.CharField(max_length=100)
     description = models.CharField(max_length=200)
     image = CloudinaryField('image', default='placeholder')
     details = models.TextField()
