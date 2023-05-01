@@ -1,6 +1,7 @@
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
 from django.urls import reverse, reverse_lazy
+from django.http import HttpResponseRedirect
 from .models import Item, Collection
 from . import views
 
@@ -51,6 +52,38 @@ class CollectionTestCase(CollectionTestMixin, TestCase):
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse_lazy('collection_list'))
+
+    """
+    Test accessing collection_list of pre-created test collection
+    """
+    def test_collection_list_view_authenticated(self):
+        response = self.client.get(reverse('collection_list'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'collection/collection_list.html')
+
+    """
+    Test creating a new collection, check proper redirect,
+    make sure the new collection can be found
+    """
+    def test_collection_create_view_authenticated(self):
+        response = self.client.post(reverse('collection_create'), {
+            'collection_name': 'New Collection',
+            'description': 'New description'
+        })
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse_lazy('collection_list'))
+        self.assertTrue(Collection.objects.filter(
+            collection_name='New Collection').exists()
+        )
+
+    """
+    Test accessing collection detail view, which displays items in
+    the collection. Pre-Created testdata will be used.
+    """
+    def test_collection_detail_view_authenticated(self):
+        response = self.client.get(reverse('collection_detail', args=[self.collection.pk]))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'collection/collection_detail.html')
 
 
 # Class for tests with unauthenticated user, inheriting from parent class
