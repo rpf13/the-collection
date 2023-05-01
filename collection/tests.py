@@ -36,7 +36,7 @@ class CollectionTestMixin:
 # Class for tests with authenticated user
 class CollectionTestCase(CollectionTestMixin, TestCase):
     """
-    Load mixin for generic data and setup additional
+    Load _setup_common mixin for generic data and setup additional
     parameters used for authenticated testcases
     """
     def setUp(self):
@@ -81,9 +81,126 @@ class CollectionTestCase(CollectionTestMixin, TestCase):
     the collection. Pre-Created testdata will be used.
     """
     def test_collection_detail_view_authenticated(self):
-        response = self.client.get(reverse('collection_detail', args=[self.collection.pk]))
+        response = self.client.get(reverse(
+            'collection_detail', args=[self.collection.pk]
+        ))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'collection/collection_detail.html')
+
+    """
+    Test updating a collection, verify update has been executed
+    and verify proper redirect to collection_list
+    """
+    def test_collection_update_view_authenticated(self):
+        response = self.client.post(reverse(
+            'collection_update', args=[self.collection.pk]), {
+            'collection_name': 'Updated Collection',
+            'description': 'Updated description'
+        })
+        self.assertEqual(response.status_code, 302)
+        self.collection.refresh_from_db()
+        self.assertEqual(self.collection.collection_name, 'Updated Collection')
+        self.assertEqual(self.collection.description, 'Updated description')
+        self.assertRedirects(response, reverse_lazy('collection_list'))
+
+    """
+    Test deleting a collection. GET request to the collection and verify 200
+    Assert correct collection delete template
+    POST request for deleting the collection and check response, which is
+    302, redirected to collection list.
+    Verify if collection still exists or not.
+    """
+    def test_collection_delete_view_authenticated(self):
+        response = self.client.get(reverse(
+            'collection_delete', args=[self.collection.pk]
+        ))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'collection/collection_delete.html')
+
+        response = self.client.post(reverse(
+            'collection_delete', args=[self.collection.pk]
+        ))
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse_lazy('collection_list'))
+        self.assertFalse(Collection.objects.filter(
+            pk=self.collection.pk).exists()
+        )
+
+    """
+    Test accessing item of pre-created test collection
+    """
+    def test_collection_detail_view_authenticated(self):
+        response = self.client.get(reverse(
+            'collection_detail', args=[self.collection.pk]
+            ))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'collection/collection_detail.html')
+
+    """
+    Test creating a new item in the collection, which is built in the setUp
+    check that the item exists after creating
+    ckeck if correct 302 redirect to collection_detail happens after creation
+    """
+    def test_item_create_view_authenticated(self):
+        response = self.client.post(reverse(
+            'item_create', args=[self.collection.pk]), {
+            'item_name': 'New Item',
+            'description': 'New item description',
+            'details': 'New item details'
+        })
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(Item.objects.filter(item_name='New Item').exists())
+        self.assertRedirects(response, reverse_lazy(
+            'collection_detail', kwargs={'pk': self.collection.pk}
+        ))
+
+    """
+    Test updating an existing item, which has been created during setUp
+    in the collection, which has been created during setUp.
+    Verify the fields are all updated and that the correct 302 to
+    item detail gets shown.
+    """
+    def test_item_update_view_authenticated(self):
+        response = self.client.post(reverse(
+            'item_update', args=[self.item.pk]), {
+            'item_name': 'Updated Item',
+            'description': 'Updated item description',
+            'details': 'Updated item details'
+        })
+        self.assertEqual(response.status_code, 302)
+        self.item.refresh_from_db()
+        self.assertEqual(self.item.item_name, 'Updated Item')
+        self.assertEqual(self.item.description, 'Updated item description')
+        self.assertEqual(self.item.details, 'Updated item details')
+        self.assertRedirects(response, reverse_lazy(
+            'item_detail', kwargs={'pk': self.item.pk}
+        ))
+
+    """
+    Test deleting an item. GET request to the item and verify 200
+    Assert correct item delete template
+    POST request for deleting the item and check response, which is
+    302, redirected to collection detail.
+    Verify if item still exists or not.
+    """
+    def test_item_delete_view_authenticated(self):
+        response = self.client.get(reverse(
+            'item_delete', args=[self.item.pk]
+        ))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'collection/item_delete.html')
+
+        response = self.client.post(reverse(
+            'item_delete', args=[self.item.pk]
+        ))
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse_lazy(
+            'collection_detail', args=[self.collection.pk]
+        ))
+        self.assertFalse(Item.objects.filter(pk=self.item.pk).exists())
+        self.assertRedirects(response, reverse_lazy(
+                'collection_detail', kwargs={'pk': self.collection.pk}
+        ))
 
 
 # Class for tests with unauthenticated user, inheriting from parent class
