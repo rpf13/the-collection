@@ -241,3 +241,36 @@ class UnauthenticatedCollectionTestCase(CollectionTestMixin, TestCase):
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'home.html')
+
+    """
+    Test if unauth. user accessing collection_create gets
+    redirected to login site. Includes next parameter to state
+    where user should be redirected after login.
+    """
+    def test_collection_create_view_unauthenticated(self):
+        response = self.client.post(reverse('collection_create'), {
+            'collection_name': 'New Collection',
+            'description': 'New description'
+        })
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(
+            response, '/accounts/login/?next=' + reverse('collection_create')
+        )
+
+    """
+    Test if unauth. user accessing collection_create gets
+    redirected to login site. User gets logged in with setUp
+    credentials and check if collection_create can be accessed
+    after login.
+    f-string is used to create expected url, combined with next
+    parameter.
+    """
+    def test_collection_create_view_login_and_redirect(self):
+        response = self.client.get(reverse('collection_create'))
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(
+            response, f"{reverse('account_login')}?next={reverse('collection_create')}")  # noqa
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('collection_create'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'collection/collection_create.html')
