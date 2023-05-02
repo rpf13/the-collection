@@ -5,6 +5,72 @@
   color: rgb(0 0 0 / 70%);
 }
 
+.text-color {
+  color: white;
+}
+
+/* Animated bg inspired by "Alvaro https://codepen.io/alvarotrigo/pen/dyzgOER */
+.bg-anim {
+  width: 100%;
+  height: 100vh;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  background-size: 300% 300%;
+  background-image: linear-gradient(-45deg, #281919 0%, #281919 25%, #281919 51%, #365158 100%);
+  -webkit-animation: AnimateBG 30s ease infinite;
+          animation: AnimateBG 30s ease infinite;
+}
+
+@-webkit-keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-o-keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 /* Footer */
 
 .footer-divider {
