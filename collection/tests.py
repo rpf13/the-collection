@@ -127,7 +127,7 @@ class CollectionTestCase(CollectionTestMixin, TestCase):
         )
 
     """
-    Test accessing item of pre-created test collection
+    Test accessing collection details of pre-created test collection
     """
     def test_collection_detail_view_authenticated(self):
         response = self.client.get(reverse(
@@ -135,6 +135,17 @@ class CollectionTestCase(CollectionTestMixin, TestCase):
             ))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'collection/collection_detail.html')
+
+    """
+    Test accessing the item details of pre-created test collection
+    and test item
+    """
+    def test_item_detail_view_authenticated(self):
+        response = self.client.get(reverse(
+            'item_detail', args=[self.item.pk]
+        ))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'collection/item_detail.html')
 
     """
     Test creating a new item in the collection, which is built in the setUp
@@ -201,6 +212,14 @@ class CollectionTestCase(CollectionTestMixin, TestCase):
         self.assertRedirects(response, reverse_lazy(
                 'collection_detail', kwargs={'pk': self.collection.pk}
         ))
+
+    """
+    Test about site with pre created user. Simple test to check 200 state
+    """
+    def test_about_view_authenticated(self):
+        response = self.client.get(reverse('about'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'collection/about.html')
 
 
 # Class for tests with unauthenticated user, inheriting from parent class
