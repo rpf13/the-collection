@@ -1,0 +1,25 @@
+
+
+/* Navbar tweaking bootstrap elements */
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(0 0 0 / 70%);
+}
+
+/* Footer */
+
+.footer-divider {
+    border-top: 1px solid white;
+  }
+
+.social a:hover {
+  color: #EEDC82;
+}
+
+.social a:hover i {
+  color: #EEDC82;
+  transition: all 0.2s ease-in-out;
+}
+
+.social a i.fa-lg {
+  font-size: 2rem;
+}
