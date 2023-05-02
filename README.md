@@ -62,7 +62,7 @@ The Wireframes are the prototype of this project and show the base idea and the 
 The following ERD (Entity Relationship Diagram) displays the SQL database schema and the associated models, used to create this project. It shows the underlaying fundament of the individual models and their relation to it.
 Django AllAuth is used to create a user authentication system.
 
-![ERD](docs/readme_images/the_collection_erd.png)
+![ERD](docs/readme_images/the_collection_erd_mod.png)
 
 ## Features
 
