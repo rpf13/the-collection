@@ -11,7 +11,8 @@
       <h3>{% trans "Sign In" %}</h3>
       <p>{% blocktrans %}Welcome back Collector! Please log in to view any of your content.<br>
         If you have not created an account yet, then please
-        <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+        <a class="text-url" href="{{ signup_url }}" aria-label="click to sign up">sign up</a>
+        first.{% endblocktrans %}</p>
     </div>
   </div>
   <div class="row">
@@ -22,7 +23,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+        <button class="btn btn-outline-light" type="submit" aria-label="Sign in button">{% trans "Sign In" %}</button>
       </form>
     </div>
   </div>

@@ -4,6 +4,15 @@
   color: white;
 }
 
+.text-url {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.text-url:hover {
+  color: #C0C0C0;
+}
+
 /* Navbar Section*/
 .navbar-light .navbar-nav .nav-link {
   color: rgba(59, 7, 7, 0.67);
@@ -146,10 +155,6 @@
 /* Footer */
 .footer-divider {
     border-top: 1px solid white;
-}
-
-.social a:hover {
-  color: #EEDC82;
 }
 
 .social a:hover i.fa-youtube {
