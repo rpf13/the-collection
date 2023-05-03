@@ -146,14 +146,24 @@
 /* Footer */
 .footer-divider {
     border-top: 1px solid white;
-  }
+}
 
 .social a:hover {
   color: #EEDC82;
 }
 
-.social a:hover i {
-  color: #EEDC82;
+.social a:hover i.fa-youtube {
+  color: #D11111;
+  transition: all 0.2s ease-in-out;
+}
+
+.social a:hover i.fa-twitter {
+  color: #117ED1;
+  transition: all 0.2s ease-in-out;
+}
+
+.social a:hover i.fa-instagram {
+  color: #BE10C7;
   transition: all 0.2s ease-in-out;
 }
 
