@@ -4,29 +4,29 @@
 {% load static %}
 
 {% block content %}
+<div class="container my-5">
   <div class="row">
-    <div class="col-md-8">
-      <h2>{{ item.item_name }}</h2>
+    <div class="col-md-8 mx-auto text-center">
+      <div class="text-center mb-3">
+        <h2>{{ item.item_name }}</h2>
+      </div>
       {% if "placeholder" in item.image.url %}
-        <img src="{% static 'images/102_item_default.webp' %}" class="img-fluid rounded my-3" alt="Image Placeholder">
+      <img src="{% static 'images/102_item_default.webp' %}" class="img-fluid rounded my-3" alt="Image Placeholder">
       {% else %}
-        <img src="{{ item.image.url }}" class="img-fluid rounded my-3" alt="{{ item.item_name }}">
+      <img src="{{ item.image.url }}" class="img-fluid rounded my-3" alt="{{ item.item_name }}">
       {% endif %}
-      <p>{{ item.description }}</p>
-      <p>{{ item.details }}</p>
       <p><strong>Collection:</strong> {{ collection_id }}</p>
       <p><strong>Added on:</strong> {{ item.added_on }}</p>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Actions</h5>
-          <a href="{% url 'item_update' pk=item.pk %}" class="btn btn-primary mb-2">Edit</a>
-          <a href="{% url 'item_delete' pk=item.pk %}" class="btn btn-danger mb-2">Delete</a>
-          <a href="{% url 'collection_detail' pk=collection_id.pk %}" class="btn btn-secondary mb-2">Back to collection</a>
-          <!-- <span class="btn btn-secondary mb-2" onclick="history.back()">Back to collection</span> -->
-        </div>
+      <p><strong>Description:</strong> {{ item.description }}</p>
+      <p>{{ item.details }}</p>
+      <div class="d-flex justify-content-center mt-4">
+        <a href="{% url 'item_update' pk=item.pk %}" class="btn btn-outline-light mx-2">Edit</a>
+        <a href="{% url 'collection_detail' pk=collection_id.pk %}" class="btn btn-outline-light mx-2">Back to
+          collection</a>
+        <!-- <span class="btn btn-secondary mb-2" onclick="history.back()">Back to collection</span> -->
+        <a href="{% url 'item_delete' pk=item.pk %}" class="btn btn-outline-light mx-2">Delete</a>
       </div>
     </div>
   </div>
+</div>
 {% endblock %}
