@@ -14,7 +14,7 @@
     <div class="row">
       {% for collection in object_list %}
       <div class="col-md-4 mb-3">
-        <div class="card mb-4 shadow-sm">
+        <div class="card mb-4 shadow-sm image-mod">
           {% if "placeholder" in collection.image.url %}
             <img class="card-img-top" src="{% static 'images/101_collection_default.webp' %}" alt="{{ collection.name }}">
           {% else %}
@@ -22,8 +22,8 @@
           {% endif %}
           <div class="card-body">
             <h5 class="card-title text-dark">{{ collection.collection_name }}</h5>
-            <p class="card-text text-dark">{{ collection.description }}</p>
-            <div class="btn-group d-flex justify-content-center flex-wrap" role="group" aria-label="Collection Actions">
+            <p class="card-text text-dark text-truncate">{{ collection.description }}</p>
+            <div class="btn-group-sm d-flex justify-content-center flex-wrap" role="group" aria-label="Collection Actions">
               <a href="{% url 'collection_detail' collection.pk %}" class="btn btn-outline-dark">View</a>
               <a href="{% url 'collection_update' collection.pk %}" class="btn btn-outline-dark">Update</a>
               <a href="{% url 'collection_delete' collection.pk %}" class="btn btn-outline-danger">Delete</a>

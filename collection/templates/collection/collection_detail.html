@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<div class="container-fluid bg-dark text-light">
+<div class="container-fluid text-light">
     <div class="row">
       <div class="col-md-12 text-center py-5">
         <h1>{{ collection.collection_name }}</h1>
@@ -14,9 +14,9 @@
     {% if items %}
       <div class="row">
         <div class="col-md-12 text-center">
-          <a href="{% url 'collection_update' pk=collection.pk %}" class="btn btn-primary mb-2">Edit Collection</a>
-          <a href="{% url 'item_create' pk=collection.pk %}" class="btn btn-primary mb-2">Add Item</a>
-          <a href="{% url 'collection_list' %}" class="btn btn-secondary mb-2">My Collections</a>
+          <a href="{% url 'item_create' pk=collection.pk %}" class="btn btn-outline-light mb-2">Add Item</a>
+          <a href="{% url 'collection_update' pk=collection.pk %}" class="btn btn-outline-light mb-2">Edit Collection</a>
+          <a href="{% url 'collection_list' %}" class="btn btn-outline-light mb-2">My Collections</a>
         </div>
       </div>
       <!-- Add the search form below the buttons -->
@@ -36,19 +36,19 @@
       <div class="row">
         {% for item in page_obj %}
         <div class="col-md-4 mb-3">
-          <div class="card mb-4 shadow-sm">
+          <div class="card mb-4 shadow-sm image-mod">
             {% if "placeholder" in item.image.url %}
             <img class="card-img-top" src="{% static 'images/102_item_default.webp' %}" alt="Image Placeholder">
             {% else %}
             <img class="card-img-top" src="{{ item.image.url }}" alt="{{ item.item_name }}">
             {% endif %}
-            <div class="card-body">
+            <div class="card-body text-card-mod">
               <h5 class="card-title text-dark">{{ item.item_name }}</h5>
-              <p class="card-text text-dark">{{ item.description }}</p>
-              <div class="btn-group" role="group" aria-label="Item Actions">
-                <a href="{% url 'item_detail' item.pk %}" class="btn btn-primary mr-2">View</a>
-                <a href="{% url 'item_update' item.pk %}" class="btn btn-secondary mr-2">Update</a>
-                <a href="{% url 'item_delete' item.pk %}" class="btn btn-danger">Delete</a>
+              <p class="card-text text-dark text-truncate">{{ item.description }}</p>
+              <div class="btn-group-sm d-flex justify-content-center flex-wrap" role="group" aria-label="Item Actions">
+                <a href="{% url 'item_detail' item.pk %}" class="btn btn-outline-dark">View</a>
+                <a href="{% url 'item_update' item.pk %}" class="btn btn-outline-dark">Update</a>
+                <a href="{% url 'item_delete' item.pk %}" class="btn btn-outline-danger">Delete</a>
               </div>
             </div>
           </div>
@@ -71,9 +71,9 @@
     <!-- pagination code used for the items -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
-      <ul class="pagination justify-content-center">
+      <ul class="pagination justify-content-center pb-5">
         {% if page_obj.has_previous %}
-        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-light">&laquo; PREV </a></li>
         {% endif %}
         <!-- code to enrich the url with the page number we are currently in -->
         {% for i in paginator.page_range %}
@@ -85,7 +85,7 @@
         {% endif %}
         {% endfor %}
         {% if page_obj.has_next %}
-        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+        <li class="page-item"><a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-light"> NEXT &raquo;</a></li>
         {% endif %}
       </ul>
     {% endif %} 

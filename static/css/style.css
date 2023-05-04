@@ -151,12 +151,21 @@
   }   
 }
 
-
-/* Footer */
-.footer-divider {
-    border-top: 1px solid white;
+/* Adjust text card background */
+.text-card-mod {
+  background-color: #F5F5F5;
 }
 
+
+/* Adjust images to have same size of card */
+.image-mod img {
+  vertical-align: middle;
+  border-style: none;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* Footer */
 .social a:hover i.fa-youtube {
   color: #D11111;
   transition: all 0.2s ease-in-out;
