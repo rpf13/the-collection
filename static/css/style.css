@@ -1,7 +1,7 @@
 
 /* General definitions */
 .text-color {
-  color: white;
+  color: #F5F5F5;
 }
 
 .text-url {
@@ -175,7 +175,6 @@
 .social a i.fa-lg {
   font-size: 2rem;
 }
-
 
 
 /* Media Queries for small screens */
