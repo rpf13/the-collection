@@ -23,8 +23,8 @@
           <h5 class="card-title">Actions</h5>
           <a href="{% url 'item_update' pk=item.pk %}" class="btn btn-primary mb-2">Edit</a>
           <a href="{% url 'item_delete' pk=item.pk %}" class="btn btn-danger mb-2">Delete</a>
-          <!-- <a href="{% url 'collection_detail' pk=collection_id.pk %}" class="btn btn-secondary mb-2">Back to collection</a> -->
-          <span class="btn btn-secondary mb-2" onclick="history.back()">Back to collection</span>
+          <a href="{% url 'collection_detail' pk=collection_id.pk %}" class="btn btn-secondary mb-2">Back to collection</a>
+          <!-- <span class="btn btn-secondary mb-2" onclick="history.back()">Back to collection</span> -->
         </div>
       </div>
     </div>
