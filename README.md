@@ -6,9 +6,9 @@ The application satisfies the demand for a simple solution to easily inventory i
 A Collection consists of multiple individual items, where each item can be described and images can be uploaded to make the catalog more appealing.
 A search function gives the user the possibility to find the item of his desire inside a collection.
     
-Link to deployed site: 
+Link to deployed site: [The Collection](https://the-collection-rpf13.herokuapp.com/)
 
-    AM I RESPONSIVE
+![Mockup](docs/images/106-2_techsini_rsponsive.png)
 
 ---
 
@@ -62,7 +62,7 @@ The Wireframes are the prototype of this project and show the base idea and the 
 The following ERD (Entity Relationship Diagram) displays the SQL database schema and the associated models, used to create this project. It shows the underlaying fundament of the individual models and their relation to it.
 Django AllAuth is used to create a user authentication system.
 
-![ERD](docs/readme_images/the_collection_erd_mod.png)
+![ERD](docs/images/the_collection_erd_mod.png)
 
 ## Features
 
