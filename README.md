@@ -239,10 +239,26 @@ I have decided to use (mostly) multiline commits, but using tags as described th
 ## Agile Development Process
 
 ### GitHub Projects
+[Github Projects](https://github.com/users/rpf13/projects/3) has been used as the Agile tool during the development phase of this project. The Kanban board was very useful to keep track on the tasks. I have created 4 columns (Epics, ToDo, In Progress, On Hold, Done) and moved the stories accordingly. The Epics column has been very helpful to see all main objectives. The On Hold column has served as a "parking spaces", when a story was partially done, but not completely finished.
+
+![Github Projects Kanban Board](docs/images/github_projects.png)
 
 ### GitHub Issues
+[Github Issues](https://github.com/rpf13/the-collection/issues) has been used to create all the stories, before they were placed on the projects Kanban board. I have create two templates, one for Epics and one for Stories.
+Each Epic and all the related stories have an epic label, which makes it very easy to filter for all tasks, related to one epic. Simply click on the label, while being in the Kanban board. Epics do also have a dedicated label called Epic, which makes it easy to filter all epics.
+Once a story has been created via the template, it will be automatically added to the Kanban board in the Todo column.
+
+![Github Issues](docs/images/github_issues.png)
 
 ### MoSCoW Prioritization
+The MoSCoW prioritization has been used to divide all epics and stories into the following categories:
+
+- **MustHave:** guaranteed to be delivered
+- **ShouldHave:** adds significant value, but not mandatory for MVP
+- **CouldHave:** adds value, would be nice to have
+- **WontHave:** no priority for this iteration, acts as placeholder for future implementation
+
+A related Github label has been created for each category and added to each epic, story - which makes it easy to identify and see the value it brings.
 
 ---
 
