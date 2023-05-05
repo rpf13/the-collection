@@ -14,21 +14,77 @@ Link to deployed site: [The Collection](https://the-collection-rpf13.herokuapp.c
 
 ## Objectives
 
+---
+
 ### Main Objectives
 
+
+---
 
 ### Stretch Objectives
 
 The following stretch objectivse are meant as a "nice to have" feature and depending on the time, I will implement them or not.
 
 
+---
+
 ## UX & Design
+
+
+---
 
 ### User Stories
 
+
+---
+
 ### Color Scheme
 
+There are different color sets used in this project. Furthermore, the Bootstrap included colors / color classes have been used. I have used [Coolors](https://coolors.co/) to pick and compare the various colors.
+I have spent quite some efforts to make sure, all colors and color combinations pass the contrast test, making sure the accessibility is given.
+The main font color palete contains the following colors: #F5F5F5 is used as text color, in addition the Bootstrap "text-light" (#F8F9FA). The #C0C0C0 has been used as a replacement for the standard "blue" active link color, in order to give a better contrast on the background. The #343A40 is the standard Bootstrap black. The red, blue and purple colors have been used to highlight the social media fonts, when hovering.
+
+<details>
+<summary>Font Colors</summary>
+
+![Font Colors](docs/images/font_colors.png)
+
+</details>
+
+The navbar colors are Bootstrap colors, with the exception of the #3B0707, which has been used as the active link color. Unfortunately the Bootstrap included / default color for this kind of navbar, does not pass the contrast test.
+
+<details>
+<summary>Navbar Colors</summary>
+
+![Navbar Colors](docs/images/navbar_colors.png)
+
+</details>
+
+The main color-highlight is the animated, gradient background. It contains two base colors and then varies in betweend them.
+
+<details>
+<summary>Background Colors</summary>
+
+![Background Colors](docs/images/gradient_base_color.png)
+![Background Gradient Colors](docs/images/gradient_45deg_colors.png)
+
+</details>
+
+---
+
 ### Typography
+
+[Google Fonts](https://fonts.google.com/) has served to choose Roboto as the main font and Raleway for the main site's title.
+
+<details>
+<summary>Fonts</summary>
+
+![Main Font Roboto](docs/images/font_roboto.png)
+![Heading Font Raleway](docs/images/font_raleway.png)
+
+</details>
+
+---
 
 ### Wireframes
 
@@ -57,6 +113,8 @@ The Wireframes are the prototype of this project and show the base idea and the 
 
 </details>
 
+---
+
 ### Data Model
 
 The following ERD (Entity Relationship Diagram) displays the SQL database schema and the associated models, used to create this project. It shows the underlaying fundament of the individual models and their relation to it.
@@ -64,7 +122,12 @@ Django AllAuth is used to create a user authentication system.
 
 ![ERD](docs/images/the_collection_erd_mod.png)
 
+---
+
 ## Features
+
+
+---
 
 ### Features Left to Implement
 
@@ -81,10 +144,18 @@ I used the following technologies and resources to create this site:
 ## Development
 
 
+---
+
 ### Mobile First Approach
+
+
+---
 
 ### Challenges during Development
 
+
+
+---
 
 ### Commit messages
 
@@ -103,19 +174,37 @@ I have decided to use (mostly) multiline commits, but using tags as described th
 ## Testing
 Testing is covered in a separate page, view [TESTING.md](TESTING.md)
 
+
+---
+
 ## Deployment
 
+
+---
 
 ### Local Deployment
 
 ---
 
 ## Credits
+
+
+---
+
 ### Code
+
+
+---
 
 ### Content
 
+
+---
+
 ### Media
+
+
+---
 
 ### Acknowledgements
 
