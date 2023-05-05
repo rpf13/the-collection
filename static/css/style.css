@@ -4,6 +4,7 @@
   color: #F5F5F5;
 }
 
+/* Text URL definition to increase contrast */
 .text-url {
   color: inherit;
   text-decoration: underline;
