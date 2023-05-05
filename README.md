@@ -1,7 +1,7 @@
 # The Collection
 The Collection is a site, which allows a registered user to create and easily manage collections of his beloved items.
 
-The application satisfies the demand for a simple solution to easily inventory individual things in a beautifully designed catalog. This can be, for example, a collection of weapons, a collection of model cars or very practical things, such as spare parts for motorcycles. Everything is possible!
+The application satisfies the demand for a simple solution, to easily inventory individual things in a beautifully designed cataloge. This can be, for example, a collection of weapons, a collection of model cars or very practical things, such as spare parts for motorcycles. Everything is possible!
 
 A Collection consists of multiple individual items, where each item can be described and images can be uploaded to make the catalog more appealing.
 A search function gives the user the possibility to find the item of his desire inside a collection.
@@ -12,29 +12,18 @@ Link to deployed site: [The Collection](https://the-collection-rpf13.herokuapp.c
 
 ---
 
-## Objectives
+## User Stories
 
----
-
-### Main Objectives
-
-
----
-
-### Stretch Objectives
-
-The following stretch objectivse are meant as a "nice to have" feature and depending on the time, I will implement them or not.
+### EPIC - XYZ
 
 
 ---
 
 ## UX & Design
 
+The overall design has been kept very simple, kind of industrial design and raw. The main focus should be the content, which is the uploaded image and the description. Everything else should be in the background. Therefore the whole colore scheme is dark, to give the focus to the content - either via the cards containing collections or the item list. The background of the descriptive description inside the card is intentionally white, in order to have immediate focus.
 
----
-
-### User Stories
-
+The design is minimalistic, the navigation very intuitive. The background animation is subtile, it does not distract but gives a nice colorful effect, evne though it is kept dark. The main heading of the entry site is an eye catcher, with its transparent text and the moving, dark colored clouds behind it.
 
 ---
 
@@ -93,23 +82,32 @@ The Wireframes are the prototype of this project and show the base idea and the 
 <details>
 <summary>Mobile Wireframe</summary>
 
-
+![Main Site](docs/wireframes/mob/mobile_main.png)
+![Sign Up](docs/wireframes/mob/mobile_signup.png)
+![Login](docs/wireframes/mob/mobile_login.png)
+![Logout](docs/wireframes/mob/mobile_logout.png)
+![Collections](docs/wireframes/mob/mobile_collections.png)
+![Collection](docs/wireframes/mob/mobile_collection.png)
+![Item](docs/wireframes/mob/mobile_item.png)
+![Contact](docs/wireframes/mob/mobile_contact.png)
+![About](docs/wireframes/mob/mobile_about.png)
+![Errors](docs/wireframes/mob/mobile_errors.png)
 
 </details>
 
 <details>
 <summary>Desktop Wireframe</summary>
 
-![Main Site](docs/wireframes/dsktp/main_site.png)
-![Sign Up](docs/wireframes/dsktp/signup.png)
-![Login](docs/wireframes/dsktp/login.png)
-![Logout](docs/wireframes/dsktp/logout.png)
-![Collections](docs/wireframes/dsktp/collections.png)
-![Collection](docs/wireframes/dsktp/collection.png)
-![Item](docs/wireframes/dsktp/collection_item.png)
-![Contact](docs/wireframes/dsktp/contact.png)
-![About](docs/wireframes/dsktp/about.png)
-![Errors](docs/wireframes/dsktp/errors.png)
+![Main Site](docs/wireframes/dsktp/desktop_main.png)
+![Sign Up](docs/wireframes/dsktp/desktop_signup.png)
+![Login](docs/wireframes/dsktp/desktop_login.png)
+![Logout](docs/wireframes/dsktp/desktop_logout.png)
+![Collections](docs/wireframes/dsktp/desktop_collections.png)
+![Collection](docs/wireframes/dsktp/desktop_collection.png)
+![Item](docs/wireframes/dsktp/desktop_item.png)
+![Contact](docs/wireframes/dsktp/desktop_contact.png)
+![About](docs/wireframes/dsktp/desktop_about.png)
+![Errors](docs/wireframes/dsktp/desktop_errors.png)
 
 </details>
 
@@ -168,6 +166,16 @@ I have decided to use (mostly) multiline commits, but using tags as described th
 - **docs:** for changes related to documentation
 - **refactor:** for refactored code, re-written code
 - **maint:** for general maintenance
+
+---
+
+## Agile Development Process
+
+### GitHub Projects
+
+### GitHub Issues
+
+### MoSCoW Prioritization
 
 ---
 
