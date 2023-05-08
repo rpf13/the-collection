@@ -8,7 +8,7 @@ A search function gives the user the possibility to find the item of his desire 
     
 Link to deployed site: [The Collection](https://the-collection-rpf13.herokuapp.com/)
 
-![Mockup](docs/images/106-2_techsini_rsponsive.png)
+![Mockup](docs/images/techsini_rsponsive.png)
 
 ---
 
@@ -130,10 +130,11 @@ The main color-highlight is the animated, gradient background. It contains two b
 
 ### Typography
 
-[Google Fonts](https://fonts.google.com/) has served to choose Roboto as the main font and Raleway for the main site's title.
+- [Google Fonts](https://fonts.google.com/) has served to choose Roboto as the main font and Raleway for the main site's title.
+- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
 
 <details>
-<summary>Fonts</summary>
+<summary>Google Fonts</summary>
 
 ![Main Font Roboto](docs/images/font_roboto.png)
 ![Heading Font Raleway](docs/images/font_raleway.png)
@@ -144,7 +145,7 @@ The main color-highlight is the animated, gradient background. It contains two b
 
 ### Wireframes
 
-The Wireframes are the prototype of this project and show the base idea and the skeleton of the app. Some details may change during development.
+The Wireframes are the prototype of this project and show the base idea and the skeleton of the app. Some details may change during development. I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
 <details>
 <summary>Mobile Wireframe</summary>
@@ -190,7 +191,164 @@ Django AllAuth is used to create a user authentication system.
 ---
 
 ## Features
+### Header
 
+![Header](docs/images/feat_navbar_unauth.png)
+
+- The header is kept very simple, kept in the background in order to let the user focus on the main entry site. However, it is present and clearly visible with a good contrast.
+- The Collection title acts as a link to bring the user to home and it has intentionally no hover effect - changing color.
+
+### Navigation Bar
+
+![Navbar](docs/images/feat_navbar_auth.png)
+
+- The navigation bar is present on each site, either "full screen" or behind a hamburger menu, once the user is on mobile view.
+- The navbar is kept simple, the focus of the user should be on the content. However, the colors for the navbar links are choosen in the way to have a clear contrast and are well visible. Teh navigation should be simple and intuitive.
+- For an unauthenticated user, the 'Sign Up' and 'Login' links are present
+- Once a user is authenticated, he can navigate to his collection via 'My Collections' or create a 'New Collection' via a navbar link.
+- The 'Contact', 'About' and 'Logout' links become visible, once a user is authenticated, 'SignUp' and 'Login' will be hidden.
+- For an authenticated user, his username is displayed next to a 'User' icon
+- Hovering over the links, will change color to black
+
+### Footer
+
+![Footer](docs/images/feat_footer.png)
+
+- The Footer consists of the Youtube, Twitter and Instagram FontAwesome icon
+- The Footer is only visible on the landing page, the contact and the about page
+- Hovering over the icons, will change their color respectively to their original color
+- Clicking on them, will open the respective site in a new tab
+
+### Landing Page
+
+![Landing Page](docs/images/feat_landing_page.png)
+
+- The Landing Page is the main site, the user will see when accessing the site. It is kept simple, very clear and distinct and should immediately attract the user
+- One of the main visual features is the transparent title. Behind this 'The Collection' title, an image of colored clouds is moving continuously, implemented via a CSS feature.
+- The second visual attracting is the gradient, changing background. It is subtile but clearly visible.
+- A short description will explain the purpose of this App as well as guide the user to 'SighUp' or 'Login' in order to access / use the site.
+
+### User Account Pages
+
+Django AllAuth has been installed and the Django templates for SignUp, Login and Logout have been used. The templates were modified in order to match the overall style.
+
+#### SignUp
+
+![SignUp](docs/images/feat_signup.png)
+
+- SignUp lets the user create a new account
+- Once he clicks to create the account, he will be redirected to the site to 'Create a Collection'
+- If a user has already an account, there is an active link on the SignUp site to navigate to the Login site
+
+#### Login
+
+![Login](docs/images/feat_login.png)
+
+- Sign In will bring the user to his content
+- If the user does not have an account yet, an active link will let him navigate to the SignUp site
+
+#### Logout
+
+![Logout](docs/images/feat_logout.png)
+
+- Logout lets the user Sign Out, asking for confirmation to do so.
+- Cancel button will bring him back to his content.
+
+### My Collections
+
+#### Collection List
+
+![My Collections Empty](docs/images/feat_collection_list_empty.png)
+
+![My Collections Full](docs/images/feat_collection_list_final.png)
+
+- My collections is the place to display the various collections of a user.
+- For first time users, after they have signed up, they are redirected to the site, where they get informed that they do not have a collection yet, offering the button to create a collection.
+- Returning users will see a list of their collections, displayed with multiple cards, each card containing a collection.
+- The description text of a collection is truncated, will be shown in full on the collection detail view
+- Existing collections provide navigations buttons to view, update and delete, where as the delete button is highlighted red, in order to show the "danger"
+- The cards are fully responsive and align on desktop as well as mobile dynamically
+- the last added / edited collection is displayed first
+- For returning users, the 'New Collection' button is intentionally kept in the navigation bar, this for a few reasons:
+    - The Collection overview should be as simplistic as possible, no distraction from the individual cards
+    - New collections will not be created that often, therefore a button does not to be very prominent
+    - The Navbar is also sleek therefore, the 'New Colection' button can easily be found
+
+#### New Collection
+
+![New Collection](docs/images/feat_new_collection.png)
+
+- New Collection button will bring the user to the form to create a new collection
+- User can add title, description and an image. If he does not add a custom image, a default image will be added in form of colored clouds
+- Save and Cancel button are present, where as the cancel button brings the user back to the collection list
+
+#### Collection Update
+
+![Collection Update](docs/images/feat_collection_update.png)
+
+- The Update button on a collection card will bring the user to the 'Collection Update' site
+- The user has the change to change all fields, including a replacement of the default image (if he did not add a custom image in the first place)
+- The save button will store the changes, cancel button will bring him back to the collection list
+
+#### Collection Delete
+
+![Collection Delete](docs/images/feat_collection_delete.png)
+
+- The Collection Delete button will bring the user to the collection delete form
+- It will ask again, if the user really wants to delete his collection with all items
+- Confirmation will delete the collection and all items, cancel brings him back to the list
+
+#### Collection Details
+
+![Collection Detail Empty](docs/images/feat_collection_detail_empty.png)
+
+![Collection Detail Final](docs/images/feat_collection_detail_final.png)
+
+- When the user clicks on the view button of a collection in the card, he will be shown the details
+- If a collection has no items in in yet, only the title of the collection including the details of the description will be presented, in combination with a descriptive text and a button to create an item.
+- If there are items in a collection, they will be presented inside cards. The cards have the same look and feel like the collection cards.
+- The detail description text will be shown underneath the colection title
+- The individual items are shown, paginated, with a maximum of 6 per site. Prev / Next button is displayed on the bottom in case pagination kicks in. The last added / edited item is displayed first.
+- Navigation buttons for 'Add Item', 'Edit Collection' and 'My Collections' are displayed
+- A Search field is shown to let the user search if he has large collections
+- Search will search in title and description fields of an item
+
+![Search unsuccessful](docs/images/feat_collection_list_search_false.png)
+
+- If the search was not successful, it will display a text and provide a button to cancel and return to the colelction list.
+
+#### Item Create
+
+![Item Create](docs/images/feat_item_create.png)
+
+- The 'Create a new item' / 'Add item' buttons will navigate the user to the create item form and let the user add a new item with a name, description and a freeform text field.
+- The user has the option to upload an image and if he leaves that blank, a default abstract image will be used
+- Save and Cancel button are in place, where as the latter one brings the user back to the collection
+
+#### Item Update
+
+![Item Update](docs/images/feat_item_update.png)
+
+- The 'Update' / 'Edit' button will bring the user to the edit form of the item
+- He can change all fields of an item, including the replacement of the default image with a custom one
+- Save changes and cancel button are available
+
+#### Item Delete
+
+![Item Delete](docs/images/feat_item_delete.png)
+
+- The 'Delete' button in the item card or the item detail site will navigate the user to the item delete form
+- User will be prompted if he is really sure to delete the item
+- Final delete and cancel buttons are in place
+
+#### Item Detail
+
+![Item Details](docs/images/feat_item_detail.png)
+
+- The item detail site gives the user the most detailed view about an item. The item title is displayed above the image.
+- The collection name to which it belogs to is shown, alongside the date, when it was added as well as the free form text.
+- Navigation elements like 'Edit' 'Back to collection' and 'Delete' button are available.
+- The 'Delete' button is intentionally not outlined in red, like all the other delete buttons, because this would break the contrast accessibility test. A complete red button would distract the user from the main content, therefore it is kept outlined in white.
 
 ---
 
