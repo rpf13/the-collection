@@ -24,8 +24,10 @@
   height: 100vh;
   background-size: 300% 300%;
   background-image: linear-gradient(-45deg, #281919 0%, #281919 25%, #281919 51%, #365158 100%);
-  -webkit-animation: AnimateBG 30s ease infinite;
   animation: AnimateBG 30s ease infinite;
+  -webkit-animation: AnimateBG 30s ease infinite;
+  -moz-animation: AnimateBG 30s ease infinite;
+  -o-animation: AnimateBG 30s ease infinite;
 }
 
 @-webkit-keyframes AnimateBG {
@@ -94,8 +96,10 @@
   background-repeat: repeat;
   -webkit-background-clip: text;
   background-clip: text;
-  /* font-weight: 900; */
   animation: AnimateH1 15s ease-in-out infinite;
+  -webkit-animation: AnimateH1 15s ease-in-out infinite;
+  -moz-animation: AnimateH1 15s ease-in-out infinite;
+  -o-animation: AnimateH1 15s ease-in-out infinite;
 }
 
 @keyframes AnimateH1 {
@@ -189,7 +193,7 @@
 .image-mod img {
   vertical-align: middle;
   border-style: none;
-  aspect-ratio: 1;
+  aspect-ratio: 1/1;
   object-fit: cover;
 }
 
