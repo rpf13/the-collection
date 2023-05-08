@@ -350,11 +350,36 @@ Django AllAuth has been installed and the Django templates for SignUp, Login and
 - Navigation elements like 'Edit' 'Back to collection' and 'Delete' button are available.
 - The 'Delete' button is intentionally not outlined in red, like all the other delete buttons, because this would break the contrast accessibility test. A complete red button would distract the user from the main content, therefore it is kept outlined in white.
 
+### Contact Site
+
+![Contact](docs/images/feat_contact.png)
+
+- The Contact link directs the user to the contact form. It is intentionally implemented only for registered users.
+- It provides a simple form to get in contact with the site owner.
+- Behind the scenes, it is linked to [Mailtrap.io](https://mailtrap.io), which is a very great plattform for testing out mail services. The mail get's received in mailtrap.io and can be further processed (sent automatically to a destination among other options.)
+
+### About Site
+
+![About](docs/images/feat_about.png)
+
+- The About site is a simple site, giving some background infos for the project. Furthermore, I wanted to add a terms of use section, since I am the site owner and a potential user is able to upload content and make it available in the World Wide Web.
+
 ---
 
-### Features Left to Implement
+## Features Left to Implement
+
+The following section will give an overview about the features, which are planned in future interations.
 
 - I had to step back from the idea of having multiple images per item, since this has increased the level of complexity for the whole project quite a lot. Since I have to deliver MVP, I will let this feature for future implementation. I had to adapt the db model to reflect this.
+- Add the possibility to have multiple images per item and display it via a carousel
+- Use Social Accounts (Google, Facebook, ...) as part of AllAuth to sign into the app
+- Implement an API to have a web picture search available directly in the image field of the collections / items section
+- Build a feature to share a collection via mail (and possible other ways) with limited rights for the viewer
+- Add the possibility for a shared collection to enable collaboration by the "the others" (very low prio)
+- Add a feature for the image section of the collection / item level, that a user can take an image directly from his smart phone, once logged in and creating a new item
+- Implement a feature to tag, label individual items
+- Enhance the search to a dynamic live search. Will require JS and further modifications.
+- User can update his profile - enhance the profile icon in the navbar with functionality that the user can update, delete his own profile.
 
 ---
 
