@@ -637,23 +637,81 @@ You can fork this repository by using the following steps:
 
 ## Credits
 
-
----
-
 ### Code
 
+I have done lots of research, especially on the Django side, to create this project. The following list will show some of the resources I have used.
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Code with Mosh](https://codewithmosh.com/p/the-ultimate-django-series) | The Ultimate Django Series | Besides CI content, I have used this very great course from Mosh to get a better understanding of Django. Buying this extensive course has helped me a lot in my journey for this project. |
+| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
+| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
+| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
+| [Cloudinary](https://pypi.org/project/django-cloudinary-storage/) | settings | how to setup cloudinary |
+| [AllAuth](https://django-allauth.readthedocs.io/en/latest/) | Authentication | Django Allauth Documentation |
+| [Read The Docs](https://docs.djangoproject.com/en/4.1/topics/auth/default/#the-loginrequired-mixin) | Allauth | Using the Django authentication system |
+| [dev.to](https://dev.to/dennisivy11/easily-convert-django-function-based-views-to-class-based-views-3okb) | Django CBV | Article about transforming Django FBV into CBV |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/auth/default/#the-loginrequired-mixin) | CBV | Django Login Required Mixin |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/auth/default/#the-login-required-decorator) | CBV | Using the Django Login Required Decorator
+| [Django Docs](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-display/) | CBV | How to use the Django Generic Views |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/class-based-views/generic-display/) | CBV | Django built in class based views |
+| [Django Docs](https://docs.djangoproject.com/en/4.2/howto/static-files/) | Static Files | How to manage static Files in Django |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/ref/models/querysets/#field-lookups) | Query Set | Query Set API Reference |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/db/queries/#complex-lookups-with-q-objects) | Q objects | Making complex lookups with Q objects |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/pagination/) | Pagination | Django Pagination Class |
+| [Mailtrap.io Blocg](https://mailtrap.io/blog/django-contact-form/) | Contact Form | How to create a Django contact form blog, was the base to build my contact form |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/forms/) | Forms | Working with Django forms |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/class-based-views/generic-editing/) | Forms | Form handling with Django CBV |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/email/) | Mail Form | Django sending emails |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/auth/default/) | Authentication | Using the Django authentication system |
+| [Python Docs](https://docs.python.org/3/library/os.html) | OS - System | Using OS interface in Python |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/forms/#widgets) | Contact Form | Using Django Widgets |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/ref/forms/widgets/) | Forms | Using Django Widgets and Form fields |
+| [Classy Class Based Views](https://ccbv.co.uk) | CBV | Django Class Based Views Helper Site |
+| [Ron's Blog](https://ron.sh/handling-custom-django-error-pages-the-proper-way/) | Error Handling | Handling Custom Django Error Pages the Proper Way |
+| [Django Docs](https://docs.djangoproject.com/en/4.1/ref/urlresolvers/#reverse) | URLS | Using django.urls utility functions, especially the reverse() |
+| [W3 Schools](https://www.w3schools.com/css/css3_animations.asp) | Title background | This tutorial has been used in order to understand Keyframe animation with CSS to create the moving background behind the transparent title |
+
+### Code for Unit Testing
+
+I have used the following resources and articles for creating my Unit Testing for the collection app.
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Django Docs](https://docs.djangoproject.com/en/4.1/topics/testing/tools/#the-test-client) | Test Client | Using the Django Test Client |
+| [Django Docs](https://docs.djangoproject.com/en/4.1/topics/testing/tools/#testcase) | Test Case Class | Using the Django Test Case Class |
+| [Django Docs](https://docs.djangoproject.com/en/4.1/topics/testing/tools/#django.test.SimpleTestCase.assertRedirects) | Assert Redirect | Using the assert redirect |
+| [Django Docs](https://docs.djangoproject.com/en/4.1/ref/models/instances/#django.db.models.Model.refresh_from_db) | Testing | using the refresh_form functionality |
+| [Django Docs](https://docs.djangoproject.com/en/4.1/topics/testing/tools/#django.test.SimpleTestCase.assertTemplateUsed) | Assert Template | Using the assert template used |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/testing/tools/#django.test.Client.force_login) | Force Login | Using Django force login used in testing |
 
 ---
 
 ### Content
 
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Codepen](https://codepen.io/alvarotrigo/pen/dyzgOER) | Background | This codepen has been the source for the gradient, floating background |
 
 ---
 
 ### Media
 
+I have used the following explicit media files in the project
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Unsplash](https://unsplash.com/photos/hoS3dzgpHzw) | Collection img | Placeholder for collection default image from unsplash |
+| [Unsplash](https://unsplash.com/photos/nF1FvXdJL7o) | Item img | Placeholder for item default image from unsplash |
+| [Unsplash](https://unsplash.com/photos/HlJZ-xm3KCI) | Title background | This image is used as the moving image behind the transparent Landing Page Title |
+| [Favicon](https://favicon.io/emoji-favicons/alien/) | Favicon | This alien favicon has been used for the site |
 
 ---
 
 ### Acknowledgements
 
+- Without the support of my wife and my little son, it would not have been possible to spend endless hours, working on this project and doing research. Many thanks to my little son for giving me a smile and very welcomed distraction, during times I was frustrated.
+- The biggest motivation and critical feedback, I got from my mentor Tim Nelson. A very big THANK YOU Tim, for giving me guidance, technical advice but also motivation to not give up and always try to get the best out of everything. You are such an awesome human being!!!
+- A big Thank you to Ed Bradley from Code Institute team, who has helped me with a few very nasty issues in the project
+- I also want to thank Daisy Mc Girr, Mentor at Code Institute, for being such an inspiring and supportive person in the CI Slack community, but also for producing awesome Django content on her [Youtube](https://www.youtube.com/@IonaFrisbee) channel.
+- A big thank you also goes to the awesome Code Institute Slack community, who was alway very supportive!
