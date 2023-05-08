@@ -28,12 +28,36 @@ In order to properly validate my HTML pages with Jinja syntax for authenticated 
 - Copy everything, and use the [validate by input](https://validator.w3.org/#validate_by_input) method.
 - Repeat this process for every page that requires a user to be logged-in/authenticated.
 
+In the following table, all W3C testing is presented with snapshots.
+
+<details>
+<summary>W3C Validation Table with Snapshots</summary>
+
 | Page | W3C URL | Screenshot | Notes |
 | --- | --- | --- | --- |
 | Home | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-collection-rpf13.herokuapp.com%2F) | ![screenshot](docs/testing/w3c_home.png) | No Errors / Warnings |
-| x | x | x | repeat |
+| SignUp | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-collection-rpf13.herokuapp.com%2Faccounts%2Fsignup%2F) | ![screenshot](docs/testing/w3c_signup.png) | No Errors / Warnings |
+| Login | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-collection-rpf13.herokuapp.com%2Faccounts%2Flogin%2F) | ![screenshot](docs/testing/w3c_login.png) | No Errors / Warnings |
+| Collections (List) | n/a | ![screenshot](docs/testing/w3c_collection_list.png) | No Errors / Warnings |
+| Collection New | n/a | ![screenshot](docs/testing/w3c_collection_new.png) | No Errors / Warnings |
+| Collection Detail | n/a | ![screenshot](docs/testing/w3c_collection_detail.png) | No Errors / Warnings |
+| Collection Detail Empty | n/a | ![screenshot](docs/testing/w3c_collection_detail_empty.png) | No Errors / Warnings |
+| Collection Update | n/a | ![screenshot](docs/testing/w3c_collection_update.png) | No Errors / Warnings |
+| Collection | Delete | ![screenshot](docs/testing/w3c_collection_delete.png) | No Errors / Warnings |
+| Item Add | n/a | ![screenshot](docs/testing/w3c_item_add.png) | No Errors / Warnings |
+| Item Update | n/a | ![screenshot](docs/testing/w3c_item_update.png) | No Errors / Warnings |
+| Item Delete | n/a | ![screenshot](docs/testing/w3c_item_delete.png) | No Errors / Warnings |
+| Item Detail | n/a | ![screenshot](docs/testing/w3c_item_detail.png) | No Errors / Warnings |
+| Item Search Successful | n/a | ![screenshot](docs/testing/w3c_item_search_success.png) | No Errors / Warnings |
+| Item Search False | n/a | ![screenshot](docs/testing/w3c_item_search_false.png) | No Errors / Warnings |
+| Contact Form | n/a | ![screenshot](/docs/testing/w3c_contact.png) | No Errors / Warnings |
+| Contact Form Confirmation | n/a | ![screenshot](docs/testing/w3c_contact_sent.png) | No Errors / Warnings |
+| About | n/a | ![screenshot](docs/testing/w3c_about.png) | No Errors / Warnings |
+| Logout | n/a | ![screenshot](docs/testing/w3c_logout.png) | No Errors / Warnings |
 
+</details>
 
+---
 
 ### CSS
 

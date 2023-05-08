@@ -358,6 +358,13 @@ Django AllAuth has been installed and the Django templates for SignUp, Login and
 - It provides a simple form to get in contact with the site owner.
 - Behind the scenes, it is linked to [Mailtrap.io](https://mailtrap.io), which is a very great plattform for testing out mail services. The mail get's received in mailtrap.io and can be further processed (sent automatically to a destination among other options.)
 
+### Contact Confirmation
+
+![Contact Confirmation](docs/images/feat_contact_sent.png)
+
+- Once the user has sent the contact form, he will be presented a confirmation
+- A button back to the collection list will be shown
+
 ### About Site
 
 ![About](docs/images/feat_about.png)
