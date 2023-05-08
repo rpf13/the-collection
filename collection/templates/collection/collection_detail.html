@@ -6,89 +6,91 @@
 {% block content %}
 
 <div class="container-fluid text-light">
-    <div class="row">
-      <div class="col-md-12 text-center py-4">
-        <h1 class="col-title-mod">{{ collection.collection_name }}</h1>
-        <p class="card-text pt-2">{{ collection.description }}</p>
-      </div>
+  <div class="row">
+    <div class="col-md-12 text-center py-4">
+      <h1 class="col-title-mod">{{ collection.collection_name }}</h1>
+      <p class="card-text pt-2">{{ collection.description }}</p>
     </div>
-    {% if items %}
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <a href="{% url 'item_create' pk=collection.pk %}" class="btn btn-outline-light mb-2">Add Item</a>
-          <a href="{% url 'collection_update' pk=collection.pk %}" class="btn btn-outline-light mb-2">Edit Collection</a>
-          <a href="{% url 'collection_list' %}" class="btn btn-outline-light mb-2">My Collections</a>
-        </div>
-      </div>
-      <!-- Add the search form below the buttons -->
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <form method="get" class="form-inline d-inline-flex justify-content-center mb-4">
-            <div class="input-group">
-              <input type="text" class="form-control" name="search" value="{{ request.GET.search }}" placeholder="Search items...">
-              <div class="input-group-append">
-                <button class="btn btn-outline-light" type="submit">Search</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    {% endif %}
-      <div class="row">
-        {% for item in page_obj %}
-        <div class="col-md-4 mb-3">
-          <div class="card mb-4 shadow-sm image-mod">
-            {% if "placeholder" in item.image.url %}
-            <img class="card-img-top" src="{% static 'images/102_item_default.webp' %}" alt="Image Placeholder">
-            {% else %}
-            <img class="card-img-top" src="{{ item.image.url }}" alt="{{ item.item_name }}">
-            {% endif %}
-            <div class="card-body text-card-mod">
-              <h5 class="card-title text-dark">{{ item.item_name }}</h5>
-              <p class="card-text text-dark text-truncate">{{ item.description }}</p>
-              <div class="btn-group-sm d-flex justify-content-center flex-wrap" role="group" aria-label="Item Actions">
-                <a href="{% url 'item_detail' item.pk %}" class="btn btn-outline-dark">View</a>
-                <a href="{% url 'item_update' item.pk %}" class="btn btn-outline-dark">Update</a>
-                <a href="{% url 'item_delete' item.pk %}" class="btn btn-outline-danger">Delete</a>
-              </div>
-            </div>
+  </div>
+  {% if items %}
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <a href="{% url 'item_create' pk=collection.pk %}" class="btn btn-outline-light mb-2">Add Item</a>
+      <a href="{% url 'collection_update' pk=collection.pk %}" class="btn btn-outline-light mb-2">Edit Collection</a>
+      <a href="{% url 'collection_list' %}" class="btn btn-outline-light mb-2">My Collections</a>
+    </div>
+  </div>
+  <!-- Add the search form below the buttons -->
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <form method="get" class="form-inline d-inline-flex justify-content-center mb-4">
+        <div class="input-group">
+          <input type="text" class="form-control" name="search" value="{{ request.GET.search }}"
+            placeholder="Search items...">
+          <div class="input-group-append">
+            <button class="btn btn-outline-light" type="submit">Search</button>
           </div>
         </div>
-        {% empty %}
-        <!-- create condition for search, if nothing is found -->
-        {% if search_performed %}
-        <div class="col-md-12 text-center">
-          <p class="lead">No search results.</p>
-          <a href="{% url 'collection_detail' collection_id %}" class="btn btn-outline-light">Cancel</a>
-        </div>
+      </form>
+    </div>
+  </div>
+  {% endif %}
+  <div class="row">
+    {% for item in page_obj %}
+    <div class="col-md-4 mb-3">
+      <div class="card mb-4 shadow-sm image-mod">
+        {% if "placeholder" in item.image.url %}
+        <img class="card-img-top" src="{% static 'images/102_item_default.webp' %}" alt="Image Placeholder">
         {% else %}
-        <div class="col-md-12 text-center">
-          <p class="lead">You haven't created any items yet.</p>
-          <a href="{% url 'item_create' collection.pk %}" class="btn btn-outline-light">Create a new Item</a>
+        <img class="card-img-top" src="{{ item.image.url }}" alt="{{ item.item_name }}">
+        {% endif %}
+        <div class="card-body text-card-mod">
+          <h5 class="card-title text-dark">{{ item.item_name }}</h5>
+          <p class="card-text text-dark text-truncate">{{ item.description }}</p>
+          <div class="btn-group-sm d-flex justify-content-center flex-wrap" role="group" aria-label="Item Actions">
+            <a href="{% url 'item_detail' item.pk %}" class="btn btn-outline-dark">View</a>
+            <a href="{% url 'item_update' item.pk %}" class="btn btn-outline-dark">Update</a>
+            <a href="{% url 'item_delete' item.pk %}" class="btn btn-outline-danger">Delete</a>
+          </div>
         </div>
-        {% endif %}
-        {% endfor %}
       </div>
-    <!-- pagination code used for the items -->
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-      <ul class="pagination justify-content-center pb-5">
-        {% if page_obj.has_previous %}
-        <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-light">&laquo; PREV </a></li>
-        {% endif %}
-        <!-- code to enrich the url with the page number we are currently in -->
-        {% for i in paginator.page_range %}
-        {% if page_obj.number == i %}
-        <!-- the current text, which is current page, is hiiden for screen readers -->
-        <li class="page-item active"><span class="page-link">{{ i }}<span class="sr-only">(current)</span></span></li>
-        {% else %}
-        <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
-        {% endif %}
-        {% endfor %}
-        {% if page_obj.has_next %}
-        <li class="page-item"><a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-light"> NEXT &raquo;</a></li>
-        {% endif %}
-      </ul>
-    {% endif %} 
-      </div>
+    </div>
+    {% empty %}
+    <!-- create condition for search, if nothing is found -->
+    {% if search_performed %}
+    <div class="col-md-12 text-center">
+      <p class="lead">No search results.</p>
+      <a href="{% url 'collection_detail' collection_id %}" class="btn btn-outline-light">Cancel</a>
+    </div>
+    {% else %}
+    <div class="col-md-12 text-center">
+      <p class="lead">You haven't created any items yet.</p>
+      <a href="{% url 'item_create' collection.pk %}" class="btn btn-outline-light">Create a new Item</a>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  <!-- pagination code used for the items -->
+  {% if is_paginated %}
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center pb-5">
+      {% if page_obj.has_previous %}
+      <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-light">&laquo; PREV </a></li>
+      {% endif %}
+      <!-- code to enrich the url with the page number we are currently in -->
+      {% for i in paginator.page_range %}
+      {% if page_obj.number == i %}
+      <!-- the current text, which is current page, is hiiden for screen readers -->
+      <li class="page-item active"><span class="page-link">{{ i }}<span class="sr-only">(current)</span></span></li>
+      {% else %}
+      <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+      {% endif %}
+      {% endfor %}
+      {% if page_obj.has_next %}
+      <li class="page-item"><a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-light"> NEXT
+          &raquo;</a></li>
+      {% endif %}
+    </ul>
+    {% endif %}
+</div>
 {% endblock %}

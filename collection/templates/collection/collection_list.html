@@ -6,38 +6,39 @@
 {% block content %}
 
 <div class="container-fluid text-light">
-    <div class="row">
-      <div class="col-md-12 text-center py-5">
-        <h1>My Collections</h1>
-      </div>
+  <div class="row">
+    <div class="col-md-12 text-center py-5">
+      <h1>My Collections</h1>
     </div>
-    <div class="row">
-      {% for collection in object_list %}
-      <div class="col-md-4 mb-3">
-        <div class="card mb-4 shadow-sm image-mod">
-          {% if "placeholder" in collection.image.url %}
-            <img class="card-img-top" src="{% static 'images/101_collection_default.webp' %}" alt="{{ collection.name }}">
-          {% else %}
-            <img class="card-img-top" src="{{ collection.image.url }}" alt="{{ collection.name }}">
-          {% endif %}
-          <div class="card-body text-card-mod">
-            <h5 class="card-title text-dark">{{ collection.collection_name }}</h5>
-            <p class="card-text text-dark text-truncate">{{ collection.description }}</p>
-            <div class="btn-group-sm d-flex justify-content-center flex-wrap" role="group" aria-label="Collection Actions">
-              <a href="{% url 'collection_detail' collection.pk %}" class="btn btn-outline-dark">View</a>
-              <a href="{% url 'collection_update' collection.pk %}" class="btn btn-outline-dark">Update</a>
-              <a href="{% url 'collection_delete' collection.pk %}" class="btn btn-outline-danger">Delete</a>
-            </div>
+  </div>
+  <div class="row">
+    {% for collection in object_list %}
+    <div class="col-md-4 mb-3">
+      <div class="card mb-4 shadow-sm image-mod">
+        {% if "placeholder" in collection.image.url %}
+        <img class="card-img-top" src="{% static 'images/101_collection_default.webp' %}" alt="{{ collection.name }}">
+        {% else %}
+        <img class="card-img-top" src="{{ collection.image.url }}" alt="{{ collection.name }}">
+        {% endif %}
+        <div class="card-body text-card-mod">
+          <h5 class="card-title text-dark">{{ collection.collection_name }}</h5>
+          <p class="card-text text-dark text-truncate">{{ collection.description }}</p>
+          <div class="btn-group-sm d-flex justify-content-center flex-wrap" role="group"
+            aria-label="Collection Actions">
+            <a href="{% url 'collection_detail' collection.pk %}" class="btn btn-outline-dark">View</a>
+            <a href="{% url 'collection_update' collection.pk %}" class="btn btn-outline-dark">Update</a>
+            <a href="{% url 'collection_delete' collection.pk %}" class="btn btn-outline-danger">Delete</a>
           </div>
         </div>
       </div>
-      {% empty %}
-      <div class="col-md-12 text-center">
-        <p class="lead">You haven't created any collections yet.</p>
-        <a href="{% url 'collection_create' %}" class="btn btn-outline-light">Create a Collection</a>
-      </div>
-      {% endfor %}
     </div>
+    {% empty %}
+    <div class="col-md-12 text-center">
+      <p class="lead">You haven't created any collections yet.</p>
+      <a href="{% url 'collection_create' %}" class="btn btn-outline-light">Create a Collection</a>
+    </div>
+    {% endfor %}
+  </div>
 </div>
 
 {% endblock %}

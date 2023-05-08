@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-# check if the next two imports can be combined
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -14,11 +13,6 @@ from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator
 from django.db.models import Q
 from .models import Collection, Item
-
-
-# Generic view to verify allauth - TO-BE-DELETED
-# def home(request):
-#     return HttpResponse("Welcome to my Django app")
 
 
 # Home view to display main site - unauthorized
