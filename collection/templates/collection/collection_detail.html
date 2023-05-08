@@ -59,12 +59,12 @@
         {% if search_performed %}
         <div class="col-md-12 text-center">
           <p class="lead">No search results.</p>
-          <a href="{% url 'collection_detail' collection_id %}" class="btn btn-secondary">Cancel</a>
+          <a href="{% url 'collection_detail' collection_id %}" class="btn btn-outline-light">Cancel</a>
         </div>
         {% else %}
         <div class="col-md-12 text-center">
           <p class="lead">You haven't created any items yet.</p>
-          <a href="{% url 'item_create' collection.pk %}" class="btn btn-primary">Create a new Item</a>
+          <a href="{% url 'item_create' collection.pk %}" class="btn btn-outline-light">Create a new Item</a>
         </div>
         {% endif %}
         {% endfor %}
