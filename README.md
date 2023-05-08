@@ -383,25 +383,55 @@ The following section will give an overview about the features, which are planne
 
 ---
 
-## Technologies Used
+## Tools & Technologies Used
+
 I used the following technologies and resources to create this site:
 
+- [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
+- [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
+- [Python](https://www.python.org) used as the back-end programming language.
+- [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
+- [GitHub](https://github.com) used for secure online code storage.
+- [Gitpod](https://gitpod.io) used as a cloud-based IDE for development.
+- [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
+- [Django](https://www.djangoproject.com) used as the Python framework for the site.
+- [PostgreSQL](https://www.postgresql.org) used as the relational database management.
+- [ElephantSQL](https://www.elephantsql.com) used as the Postgres database.
+- [Heroku](https://www.heroku.com) used for hosting the deployed back-end site.
+- [Cloudinary](https://cloudinary.com) used for dynamic file storage for collection & item images.
+- [Whitenoise](https://whitenoise.readthedocs.io/en/latest/) used for static file storage
+- [PostgreSQL](https://www.postgresql.org) used as the relational database management.
+- [ElephantSQL](https://www.elephantsql.com) used as the Postgres database.
+- [Heroku](https://www.heroku.com) used for hosting the deployed back-end site.
+- [Techsini](https://techsini.com/) used to create the mockup image used in my readme.
+- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) used to check contrast between colours on the site
+- [Balsamiq](https://balsamiq.com/wireframes) used to design my site wireframes.
+- [TinyWow](https://tinywow.com/image/jpg-to-webp) used to compress images & transform to other formats
+- [Mailtrap](https://mailtrap.io) used as the backend for sending mails via contact form
+- [Unsplash](https://unsplash.com) used to get default and background images
+- [Favicon.io](https://favicon.io/emoji-favicons/alien/) used to get the favicon
 
 ---
 
 ## Development
 
+The following chapters describe why and how I have choosen to code certain parts the way they are. This section should give an explanation to my thinking process and explain the reader some conceptual decisions.
 
----
 
 ### Mobile First Approach
 
+The app was planned in a mobile first thinking process. It should be a fully responsive app, which looks great on mobile devices but also on desktop. Bootstrap elements really help, for example in the form of the navigation bar, colapsing the elements into a hamburger menu.
+Other parts are chosen in the way, that the look great on mobile and on desktop. For example the buttons were chosen in a size, which will suit all formats.
+Nervertless, some elements did have to get some adjustments via very minimal usage of media queries. 
 
 ---
 
 ### Challenges during Development
 
-
+My biggest challenge during this project was to get a better understanding of Django. Django is really a very powerful tool, "Batteries included" framework, which makes it sometimes difficult to get along all possibilities. I have spent endless hours in reading documentation.
+My aim was to create something completely new, I wanted an app which makes sense and serves a purpose. I did choose to create this app, because this is something I always wanted, an app to inventorise my collection of things. 
+Furthermore, I wanted to use Class Based Views. I was thinking, that should be easily doable but it turned out to be much more tricky than I though. For example I could not make the error sites work using only class based views. So I had to adapt that part to function based views.
+Since I truly love minimalistic and industrial design, it was clear to me, that the app has to be built that ways. I am very happy with the outcome and I am looking forward to implement the additional features in future increments.
 
 ---
 
