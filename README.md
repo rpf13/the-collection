@@ -364,6 +364,13 @@ Django AllAuth has been installed and the Django templates for SignUp, Login and
 
 - The About site is a simple site, giving some background infos for the project. Furthermore, I wanted to add a terms of use section, since I am the site owner and a potential user is able to upload content and make it available in the World Wide Web.
 
+### Errors
+
+![Error Handling](docs/images/feat_errors.png)
+
+- The site includes error handling for error 403 Forbidden Page View, error 404 Page Not Found and error 500 Internal Server Error
+- When getting such an error, a custom message is shown reflecting the particular error and give the user the option to navigate back
+
 ---
 
 ## Features Left to Implement
