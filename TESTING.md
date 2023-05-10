@@ -178,34 +178,51 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 
 ## Lighthouse Audit
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to discuss testing the live/deployed site's Lighthouse Audit reports.
-Avoid testing the local version (especially if developing in Gitpod), as this can have knock-on effects of performance.
-
-If you don't have Lighthouse in your Developer Tools,
-it can be added as an [extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk).
-
-Don't just test the home page (unless it's a single-page application).
-Make sure to test the Lighthouse Audit results for all of your pages.
-
-**IMPORTANT**: You must provide screenshots of the results, to "prove" that you've actually tested them.
-
-Sample Lighthouse testing documentation:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+<details>
+<summary>Lighthouse Testing Table with Snapshots</summary>
 
 | Page | Size | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home | Mobile | ![screenshot](documentation/lighthouse-home-mobile.png) | Some minor warnings |
-| Home | Desktop | ![screenshot](documentation/lighthouse-home-desktop.png) | Few warnings |
-| About | Mobile | ![screenshot](documentation/lighthouse-about-mobile.png) | Some minor warnings |
-| About | Desktop | ![screenshot](documentation/lighthouse-about-desktop.png) | Few warnings |
-| Gallery | Mobile | ![screenshot](documentation/lighthouse-gallery-mobile.png) | Slow response time due to large images |
-| Gallery | Desktop | ![screenshot](documentation/lighthouse-gallery-desktop.png) | Slow response time due to large images |
-| x | x | x | repeat for any other tested pages/sizes |
+| About | Desktop | ![screenshot](docs/testing/lh_about_d.png) | No warnings |
+| About | Mobile | ![screenshot](docs/testing/lh_about_m.png) | No warnings |
+| Collection Delete | Desktop | ![screenshot](docs/testing/lh_collection_delete_d.png) | No warnings |
+| Collection Delete | Mobile | ![screenshot](docs/testing/lh_collection_delete_m.png) | No warnings |
+| Collection Detail | Desktop | ![screenshot](docs/testing/lh_collection_detail_d.png) | Minor warnings, Cloudinary image load |
+| Collection Detail | Mobile | ![screenshot](docs/testing/lh_collection_detail_m.png) | Minor warnings, Cloudinary image load |
+| Collection New | Desktop | ![screenshot](docs/testing/lh_collection_new_d.png) | No warnings |
+| Collection New | Mobile | ![screenshot](docs/testing/lh_collection_new_m.png) | No warnings |
+| Collection Update | Desktop | ![screenshot](docs/testing/lh_collection_update_d.png) | No warnings |
+| Collection Update | Mobile | ![screenshot](docs/testing/lh_collection_update_m.png) | No warnings |
+| Collection List | Desktop | ![screenshot](docs/testing/lh_collections_d.png) | Minor warnings, Cloudinary image load |
+| Collection List | Mobile | ![screenshot](docs/testing/lh_collections_m.png) | Minor warnings, Cloudinary image load |
+| Contact | Desktop | ![screenshot](docs/testing/lh_contact_d.png) | No warnings |
+| Contact | Mobile | ![screenshot](docs/testing/lh_contact_m.png) | No warnings |
+| Contact sent | Desktop | ![screenshot](docs/testing/lh_contact_sent_d.png) | No warnings |
+| Contact sent | Mobile | ![screenshot](docs/testing/lh_contact_sent_m.png) | No warnings |
+| Home | Desktop | ![screenshot](docs/testing/lh_home_d.png) | No warnings |
+| Home | Mobile | ![screenshot](docs/testing/lh_home_m.png) | No warnings |
+| Item Delete | Desktop | ![screenshot](docs/testing/lh_item_delete_d.png) | No warnings |
+| Item Delete | Mobile | ![screenshot](docs/testing/lh_item_delete_m.png) | No warnings |
+| Item Search False | Desktop | ![screenshot](docs/testing/lh_item_search_false_d.png) | No warnings |
+| Item Search False | Mobile | ![screenshot](docs/testing/lh_item_search_false_m.png) | No warnings |
+| Item Search True | Desktop | ![screenshot](docs/testing/lh_item_search_true_d.png) | No warnings |
+| Item Search True | Mobile | ![screenshot](docs/testing/lh_item_search_true_m.png) | No warnings |
+| Item Update | Desktop | ![screenshot](docs/testing/lh_item_update_d.png) | No warnings |
+| Item Update | Mobile | ![screenshot](docs/testing/lh_item_update_m.png) | No warnings |
+| Item Details | Desktop | ![screenshot](docs/testing/lh_item_view_d.png) | No warnings |
+| Item Details | Mobile | ![screenshot](docs/testing/lh_item_view_m.png) | No warnings |
+| Login | Desktop | ![screenshot](docs/testing/lh_login_d.png) | No warnings |
+| Login | Mobile | ![screenshot](docs/testing/lh_login_m.png) | No warnings |
+| Logout | Desktop | ![screenshot](docs/testing/lh_logout_d.png) | No warnings |
+| Logout | Mobile | ![screenshot](docs/testing/lh_logout_m.png) | No warnings |
+| SignUp | Desktop | ![screenshot](docs/testing/lh_signup_d.png) | No warnings |
+| SignUp | Mobile | ![screenshot](docs/testing/lh_signup_m.png) | No warnings |
+
+</details>
+
+---
 
 ## Defensive Programming
 
