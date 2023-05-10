@@ -342,7 +342,7 @@ I have tested the functional user stories and listed in the following table, tog
 
 I have conducted a series of automated tests on my application.
 
-I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
+I have tested the "Collection" app via unit test. I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
 
 ### Python (Unit Testing)
 
@@ -356,11 +356,17 @@ I have used Django's built-in unit testing framework to test the application fun
 
 In order to run the tests, I ran the following command in the terminal each time:
 
-`python3 manage.py test name-of-app `
+`python3 manage.py test collection.tests`
 
-To create the coverage report, I would then run the following commands:
+All testcases are successfully executed:
 
-`coverage run --source=name-of-app manage.py test`
+![Unit Test Collection App](docs/testing/unit_test_summary.png)
+
+To create the coverage report, I would then run the following commands after first installing the coverage pacakge via pip:
+
+`pip3 install coverage`
+
+`coverage run --source=collection manage.py test`
 
 `coverage report`
 
@@ -370,42 +376,12 @@ To see the HTML version of the reports, and find out whether some pieces of code
 
 `python3 -m http.server`
 
-Below are the results from the various apps on my application that I've tested:
+I did then open the webbrowser via the local server port and did navigate to the htmlcov folder.
 
-| App | File | Coverage | Screenshot |
-| --- | --- | --- | --- |
-| Bag | test_forms.py | 99% | ![screenshot](documentation/py-test-bag-forms.png) |
-| Bag | test_models.py | 89% | ![screenshot](documentation/py-test-bag-models.png) |
-| Bag | test_urls.py | 100% | ![screenshot](documentation/py-test-bag-urls.png) |
-| Bag | test_views.py | 71% | ![screenshot](documentation/py-test-bag-views.png) |
-| Checkout | test_forms.py | 99% | ![screenshot](documentation/py-test-checkout-forms.png) |
-| Checkout | test_models.py | 89% | ![screenshot](documentation/py-test-checkout-models.png) |
-| Checkout | test_urls.py | 100% | ![screenshot](documentation/py-test-checkout-urls.png) |
-| Checkout | test_views.py | 71% | ![screenshot](documentation/py-test-checkout-views.png) |
-| Home | test_forms.py | 99% | ![screenshot](documentation/py-test-home-forms.png) |
-| Home | test_models.py | 89% | ![screenshot](documentation/py-test-home-models.png) |
-| Home | test_urls.py | 100% | ![screenshot](documentation/py-test-home-urls.png) |
-| Home | test_views.py | 71% | ![screenshot](documentation/py-test-home-views.png) |
-| Products | test_forms.py | 99% | ![screenshot](documentation/py-test-products-forms.png) |
-| Products | test_models.py | 89% | ![screenshot](documentation/py-test-products-models.png) |
-| Products | test_urls.py | 100% | ![screenshot](documentation/py-test-products-urls.png) |
-| Products | test_views.py | 71% | ![screenshot](documentation/py-test-products-views.png) |
-| Profiles | test_forms.py | 99% | ![screenshot](documentation/py-test-profiles-forms.png) |
-| Profiles | test_models.py | 89% | ![screenshot](documentation/py-test-profiles-models.png) |
-| Profiles | test_urls.py | 100% | ![screenshot](documentation/py-test-profiles-urls.png) |
-| Profiles | test_views.py | 71% | ![screenshot](documentation/py-test-profiles-views.png) |
-| x | x | x | repeat for all remaining tested apps/files |
+Below are the results from the "Collection" app on my application that I've tested:
 
-#### Unit Test Issues
+![Unit Test Coverage Report](docs/testing/unit_test_coverage_report.png)
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this section to list any known issues you ran into while writing your unit tests.
-Remember to include screenshots (where possible), and a solution to the issue (if known).
-
-This can be used for both "fixed" and "unresolved" issues.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 ## Bugs
 
