@@ -283,30 +283,43 @@ The aforementioned tests are just an example of a few different project scenario
 
 🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
+---
+
 ## User Story Testing
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+I have tested the functional user stories and listed in the following table, together with a screenshot. Since I did also add user stories for admin tasks like mentor sessions, documentation, app submission, I did not include them in the table - since snapshots are difficult for those. However, they are also clearly documented in the README section.
 
-Testing user stories is actually quite simple, once you've already got the stories defined on your README.
+<details>
+<summary>User story testing Table with Snapshots</summary>
 
-Most of your project's **features** should already align with the **user stories**,
-so this should as simple as creating a table with the user story, matching with the re-used screenshot
-from the respective feature.
+| User Story | Screenshot | Comment |
+| --- | --- | --- |
+| As a Developer I can create a Collection model, view & template so that I can save actual data for a new collection and display it [#32](https://github.com/rpf13/the-collection/issues/32) `(MustHave)` | ![screenshot](docs/images/feat_new_collection.png) ![screenshot](docs/images/feat_collection_list_final.png) | |
+| As a Developer I can create an item(s) model, view & template so that a user can add items to his collections [#33](https://github.com/rpf13/the-collection/issues/33) `(MustHave)` | ![screenshot](docs/images/feat_item_create.png) ![screenshot](docs/images/feat_item_detail.png) | |
+| As a Developer I can style the collection & items sites in the way that it reflects the overall design. Furthermore, I can update the navigation between the two as well as the rest of the app so that the user has a overall design experience throughout the whole app and can easily navigate between the sections. [#34](https://github.com/rpf13/the-collection/issues/34) `(MustHave)` | ![screenshot](docs/images/feat_collection_list_final.png) ![screenshot](docs/images/feat_collection_detail_final.png) | |
+| As a Developer I can add a generic image to a catalog and items by default so that the user has an nice look and feel even though he does not want to upload an image to a collection or item. [#35](https://github.com/rpf13/the-collection/issues/35) `(CouldHave)` | ![screenshot](docs/images/feat_collection_detail_final.png) ![screenshot](docs/images/feat_collection_list_final.png) | The blueish image in the collection is the default image. The red/blue clouds is the items default |
+| As a Developer I can create an update & delete model so that a registered user can update or delete one of his collections and all the related items [#51](https://github.com/rpf13/the-collection/issues/51) `(MustHave)` | ![screenshot](docs/images/feat_collection_update.png) | |
+| As a Developer I can create an update & delete model so that a registered user can update or delete one of his items [#52](https://github.com/rpf13/the-collection/issues/52) `(MustHave)` | ![screenshot](docs/images/feat_item_update.png) | |
+| As a user I can register an account so that I can create, update, delete a new collection and the individual items [#23](https://github.com/rpf13/the-collection/issues/23) `(MustHave)` | ![screenshot](docs/images/feat_signup.png) | |
+| As a user I can login & logout of my account so that my account is secured and no one else has access to my collections [#24](https://github.com/rpf13/the-collection/issues/24) `(MustHave)` | ![screenshot](docs/images/feat_login.png) ![screenshot](docs/images/feat_logout.png) | |
+| As a user I can see the status of authentication int he navbar so that I can easily see whether I am logged in or not [#25](https://github.com/rpf13/the-collection/issues/25) `(ShouldHave)` | ![screenshot](docs/images/feat_navbar_auth.png) | The username is displayed next to the user icon, user is "Apple" in this example |
+| As a developer I can create an admin / superuser so that I can login to the django admin panel and will be able to see newly created user profiles [#50](https://github.com/rpf13/the-collection/issues/50) `(MustHave)` | ![screenshot](docs/images/feat_admin_overview.png) ![screenshot](docs/images/feat_admin_users.png) | |
+| As a Developer I can create the base html template so that I can get a default main page and have the base concept / styling for all the subsequent sites [#28](https://github.com/rpf13/the-collection/issues/28) `(MustHave)` | ![screenshot](docs/images/feat_landing_page.png) | |
+| As a Developer I can add a beautiful glow effect to the "The Collection" site main title so that the user will have a stunning effect, when visiting the main site [#29](https://github.com/rpf13/the-collection/issues/29) `ShouldHave` | ![screenshot](docs/images/feat_landing_page.png) | Glow effect got "replaced" with the transparent header / moving background |
+| As a Developer I can add the main nav bar to the site so that a user can navigate through all content on the site [#30](https://github.com/rpf13/the-collection/issues/30) `MustHave` | ![screenshot](docs/images/feat_navbar_auth.png) | |
+| As a Developer I can update the raw styling of the app so that the site looks nice, is responsive and reflects state of the art guidelines [#53](https://github.com/rpf13/the-collection/issues/53) `MustHave` | ![screenshot](docs/images/feat_collection_list_final.png) | image is just one example, whole site has one styling cocnept |
+| As a Developer I can create a search functionality inside a collection so that a user can search for items in a easy and very fast way. [#36](https://github.com/rpf13/the-collection/issues/36) `ShouldHave` | ![screenshot](docs/images/feat_collection_list_search_true.png) ![screenshot](docs/images/feat_collection_list_search_false.png) | Search successful and unsuccessful are covered |
+| As a Developer I can adjust the collection / items template so that the search field has a central place and has an integrated look and feel to the user so that it is obvious for a user to use the search. [#37](https://github.com/rpf13/the-collection/issues/37) `ShouldHave` | ![screenshot](docs/images/feat_collection_detail_final.png) | |
+| As a Developer I can create a feedback site so that a user can get in contact with the developer / site owner [#38](https://github.com/rpf13/the-collection/issues/38) `ShouldHave` | ![screenshot](docs/images/feat_contact.png) | |
+| As a Developer I can connect / implement the feedback form with a email provider like emailJS so that a user can actually send a real feedback, which the site owner will receive [#39](https://github.com/rpf13/the-collection/issues/39) `ShouldHave` | ![screenshot](docs/images/feat_contact_sent.png) ![screenshot](docs/images/feat_mailtrap_inbox.png) | Mailtrap.io has been used as the mailprovider |
+| As a Developer I can create an "About this site" page so that a user can understand and read what it is all about including legal aspects of content upload, terms and condition. [#40](https://github.com/rpf13/the-collection/issues/40) `CouldHave` | ![screenshot](docs/images/feat_about.png) | |
+| As a Developer I can create a 403 Unauthorized error page so that so that an unauthorized user gets redirect and receives a useful error page, my views are secured [#41](https://github.com/rpf13/the-collection/issues/41) `MustHave` | ![screenshot](docs/images/feat_errors.png) | 403 error could not be forced since in such case user gets redirected to login/signup. Image is representative, 403 looks identical. |
+| As a Developer I can create a 404 Not found error page so that so that a user gets redirect and receives a useful error page [#42](https://github.com/rpf13/the-collection/issues/42) `MustHave` | ![screenshot](docs/images/feat_errors.png) | |
+| As a Developer I can create a 500 server error page so that so that a user gets redirect and receives a useful error page [#43](https://github.com/rpf13/the-collection/issues/43) `MustHave` | ![screenshot](docs/images/feat_errors_500_raw.png) | Image is raw styling snapshot, since I had to tweak the model to force such error, which I did during development |
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+</details>
 
-| User Story | Screenshot |
-| --- | --- |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature01.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature02.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature03.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature04.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature05.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature06.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature07.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature08.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature09.png) |
-| repeat for all remaining user stories | x |
+---
 
 ## Automated Testing
 

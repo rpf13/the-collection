@@ -313,9 +313,11 @@ Django AllAuth has been installed and the Django templates for SignUp, Login and
 - A Search field is shown to let the user search if he has large collections
 - Search will search in title and description fields of an item
 
-![Search unsuccessful](docs/images/feat_collection_list_search_false.png)
+![Search successful](docs/images/feat_collection_list_search_true.png)
 
 - If the search was not successful, it will display a text and provide a button to cancel and return to the colelction list.
+
+![Search unsuccessful](docs/images/feat_collection_list_search_false.png)
 
 #### Item Create
 
