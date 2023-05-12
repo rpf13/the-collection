@@ -98,83 +98,157 @@ I have used the recommended [CI Python Linter](https://pep8ci.herokuapp.com) to 
 
 ## Browser Compatibility
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to discuss testing the live/deployed site on various browsers.
-
-Consider testing at least 3 different browsers, if available on your system.
-
-Recommended browsers to consider:
-- [Chrome](https://www.google.com/chrome)
-- [Firefox (Developer Edition)](https://www.mozilla.org/firefox/developer)
-- [Edge](https://www.microsoft.com/edge)
-- [Safari](https://support.apple.com/downloads/safari)
-- [Brave](https://brave.com/download)
-- [Opera](https://www.opera.com/download)
-
-**IMPORTANT**: You must provide screenshots of the tested browsers, to "prove" that you've actually tested them.
-
-Please note, there are services out there that can test multiple browser compatibilities at the same time.
-Some of these are paid services, but some are free.
-If you use these, you must provide a link to the source used for attribution, and multiple screenshots of the results.
-
-Sample browser testing documentation:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 I've tested my deployed project on multiple browsers to check for compatibility issues.
+I have tested it on Chrome and Safari on OSX and Edge in Windows 10.
+Please note that in addition to these desktop tests, there are also tests done in the responsiveness section with Chrome on iOS and Firefox on iPadOS.
 
-| Browser | Screenshot | Notes |
-| --- | --- | --- |
-| Chrome | ![screenshot](documentation/browser-chrome.png) | Works as expected |
-| Firefox | ![screenshot](documentation/browser-firefox.png) | Works as expected |
-| Edge | ![screenshot](documentation/browser-edge.png) | Works as expected |
-| Safari | ![screenshot](documentation/browser-safari.png) | Minor CSS differences |
-| Brave | ![screenshot](documentation/browser-brave.png) | Works as expected |
-| Opera | ![screenshot](documentation/browser-opera.png) | Minor differences |
-| Internet Explorer | ![screenshot](documentation/browser-iex.png) | Does not work as expected |
-| x | x | repeat for any other tested browsers |
-| x | x | repeat for any other tested browsers |
-| x | x | repeat for any other tested browsers |
-| x | x | repeat for any other tested browsers |
-| x | x | repeat for any other tested browsers |
-| x | x | repeat for any other tested browsers |
+In the table below you can find snapshots of each browser. I did a "walkthrough" of the most important features / workflow, which a user would execute.
+
+<details>
+<summary>Browser Compatibility Testing Table with Snapshots</summary>
+
+| Browser | OS | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Chrome | OSX | ![screenshot](docs/testing/01_main_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/02_signup_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/04_collection_new_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/05_collections_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/06_update_collection_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/07_collection_empty_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/08_item_create_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/09_item_created_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/10_1_item_created_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/10_2_item_detail_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/11_item_delete_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/12_collection_delete_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/13_contact_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/14_contact_true_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/15_about_chrome_d.webp) | Works as expected |
+| Chrome | OSX | ![screenshot](docs/testing/16_signout_chrome_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/01_main_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/02_signup_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/04_collection_new_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/05_collections_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/06_update_collection_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/07_collection_empty_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/08_item_create_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/09_item_created_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/10_1_item_created_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/10_1_iterm_detail_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/11_item_delete_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/12_collection_delete_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/13_contact_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/14_contact_true_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/15_about_safari_d.webp) | Works as expected |
+| Safari | OSX | ![screenshot](docs/testing/16_signout_safari_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/01_main_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/02_signup_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/03_collection_empty_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/04_collection_new_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/05_collections_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/06_update_collection_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/07_collection_empty_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/08_item_create_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/09_item_created_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/10_1_item_created_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/10_2_item_created_detail_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/11_item_delete_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/12_collection_delete_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/13_contact_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/14_contact_true_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/15_about_edge_win_d.webp) | Works as expected |
+| Edge | Win10 | ![screenshot](docs/testing/16_signout_edge_win_d.webp) | Works as expected |
+
+</details>
+
+---
 
 ## Responsiveness
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to discuss testing the live/deployed site on various device sizes.
-
-The minimum requirement is for the following 3 tests:
-- Mobile
-- Tablet
-- Desktop
-
-**IMPORTANT**: You must provide screenshots of the tested responsiveness, to "prove" that you've actually tested them.
-
-Using the "amiresponsive" mockup image (or similar) does not suffice the requirements.
-Consider using some of the built-in device sizes in the Developer Tools.
-
-If you have tested the project on your actual mobile phone or tablet, consider also including screenshots of these as well.
-It showcases a higher level of manual tests, and can be seen as a positive inclusion!
-
-Sample responsiveness testing documentation:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 I've tested my deployed project on multiple devices to check for responsiveness issues.
+I have used real devices for testing:
+- MacBook Pro M1 with OS X 13.2.1
+- iPhone12 Pro with iOS 16.4.1
+- iPad Pro 11" with iPadOS 16.4.1
 
-| Device | Screenshot | Notes |
-| --- | --- | --- |
-| Mobile (DevTools) | ![screenshot](documentation/responsive-mobile.png) | Works as expected |
-| Tablet (DevTools) | ![screenshot](documentation/responsive-tablet.png) | Works as expected |
-| Desktop | ![screenshot](documentation/responsive-desktop.png) | Works as expected |
-| XL Monitor | ![screenshot](documentation/responsive-xl.png) | Scaling starts to have minor issues |
-| 4K Monitor | ![screenshot](documentation/responsive-4k.png) | Noticeable scaling issues |
-| Google Pixel 7 Pro | ![screenshot](documentation/responsive-pixel.png) | Works as expected |
-| iPhone 14 | ![screenshot](documentation/responsive-iphone.png) | Works as expected |
-| x | x | repeat for any other tested sizes |
+In the table below you can find snapshots of each browser / plattform. I did a "walkthrough" of the most important features / workflow, which a user would execute.
+
+<details>
+<summary>Mobile Responsiveness Testing Table with Snapshots</summary>
+
+| Device | Browser | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Mobile | Chrome | ![screenshot](docs/testing/01_main_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/02_signup_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/03_mycollections_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/04_collection_new_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/05_collections_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/06_update_collection_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/07_collection_empty_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/08_item_create_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/09_item_created_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/10_item_created_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/11_item_delete_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/12_collection_delete_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/13_contact_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/14_contact_true_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/15_about_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/16_signout_chrome_m.png) | Works as expected |
+| Mobile | Chrome | ![screenshot](docs/testing/17_hamburger_chrome_m.png) | Works as expected |
+
+</details>
+
+<details>
+<summary>Tablet Responsiveness Testing Table with Snapshots</summary>
+
+| Device | Browser | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Tablet | Firefox | ![screenshot](docs/testing/01_main_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/02_signup_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/03_mycollections_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/04_collection_new_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/05_collections_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/06_update_collection_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/07_collection_empty_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/08_item_create_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/09_item_created_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/10_1_item_created_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/10_2_item_detail_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/11_item_delete_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/12_collection_delete_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/13_contact_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/14_contact_true_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/15_about_firefox_i.png) | Works as expected |
+| Tablet | Firefox | ![screenshot](docs/testing/16_signout_firefox_i.png) | Works as expected |
+
+</details>
+
+<details>
+
+<summary>Desktop Responsiveness Testing Table with Snapshots</summary>
+
+| Device | Browser | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Desktop | Safari | ![screenshot](docs/testing/01_main_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/02_signup_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/04_collection_new_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/05_collections_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/06_update_collection_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/07_collection_empty_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/08_item_create_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/09_item_created_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/10_1_item_created_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/10_1_iterm_detail_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/11_item_delete_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/12_collection_delete_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/13_contact_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/14_contact_true_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/15_about_safari_d.webp) | Works as expected |
+| Desktop | Safari | ![screenshot](docs/testing/16_signout_safari_d.webp) | Works as expected |
+
+</details>
+
+---
 
 ## Lighthouse Audit
 
@@ -346,12 +420,6 @@ I have tested the "Collection" app via unit test. I fully acknowledge and unders
 
 ### Python (Unit Testing)
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Adjust the code below (file names, etc.) to match your own project files/folders.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 I have used Django's built-in unit testing framework to test the application functionality.
 
 In order to run the tests, I ran the following command in the terminal each time:
@@ -382,6 +450,7 @@ Below are the results from the "Collection" app on my application that I've test
 
 ![Unit Test Coverage Report](docs/testing/unit_test_coverage_report.png)
 
+---
 
 ## Bugs
 
