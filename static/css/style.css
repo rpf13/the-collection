@@ -217,6 +217,11 @@
   font-size: 2rem;
 }
 
+/* Form Textarea limit to 100% width - rosponsiveness */
+form textarea {
+  max-width: 100%;
+}
+
 
 /* Media Queries for small screens */
 
