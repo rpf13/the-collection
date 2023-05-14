@@ -33,7 +33,8 @@ DEBUG = 'DEBUG' in os.environ
 ALLOWED_HOSTS = ['the-collection-rpf13.herokuapp.com', 'localhost']
 
 
-# Application definition
+# Application definition - staticfiles needs to come before cloudinary
+# otherwise whitenoise will not work
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -65,6 +66,7 @@ LOGOUT_REDIRECT_URL = '/'
 # Login and registr. will work without providing email
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+# Adding whitenoise for static files
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -101,17 +103,6 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-# DATABASES = {
-#     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-# }
 
 # Database w. option to use local db for testing, otherwise cloudinary
 if "DATABASE_URL" in os.environ:
