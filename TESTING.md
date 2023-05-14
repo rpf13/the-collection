@@ -300,79 +300,97 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Defensive Programming
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Defensive programming (defensive design) is extremely important!
-
-When building projects that accept user inputs or forms, you should always test the level of security for each.
-Examples of this could include (not limited to):
-
-Forms:
-- Users cannot submit an empty form
-- Users must enter valid email addresses
-
-PP3 (Python-only):
-- Users must enter a valid letter/word/string when prompted
-- Users must choose from a specific list only
-
-Flask/Django:
-- Users cannot brute-force a URL to navigate to a restricted page
-- Users cannot perform CRUD functionality while logged-out
-- User-A should not be able to manipulate data belonging to User-B, or vice versa
-- Non-Authenticated users should not be able to access pages that require authentication
-- Standard users should not be able to access pages intended for superusers
-
-You'll want to test all functionality on your application, whether it's a standard form,
-or uses CRUD functionality for data manipulation on a database.
-Make sure to include the `required` attribute on any form-fields that should be mandatory.
-Try to access various pages on your site as different user types (User-A, User-B, guest user, admin, superuser).
-
-You should include any manual tests performed, and the expected results/outcome.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-Defensive programming was manually tested with the below user acceptance testing:
-
 | Page | User Action | Expected Result | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
-| Home Page | | | | |
-| | Click on Logo | Redirection to Home page | Pass | |
-| | Click on Home link in navbar | Redirection to Home page | Pass | |
-| Gallery Page | | | | |
-| | Click on Gallery link in navbar | Redirection to Gallery page | Pass | |
-| | Load gallery images | All images load as expected | Pass | |
-| Contact Page | | | | |
-| | Click on Contact link in navbar | Redirection to Contact page | Pass | |
-| | Enter first/last name | Field will accept freeform text | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter message in textarea | Field will accept freeform text | Pass | |
-| | Click the Submit button | Redirects user to form-dump | Pass | User must click 'Back' button to return |
-| Sign Up | | | | |
-| | Click on Sign Up button | Redirection to Sign Up page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password (twice) | Field will only accept password format | Pass | |
-| | Click on Sign Up button | Asks user to confirm email page | Pass | Email sent to user |
-| | Confirm email | Redirects user to blank Sign In page | Pass | |
-| Log In | | | | |
-| | Click on the Login link | Redirection to Login page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password | Field will only accept password format | Pass | |
-| | Click Login button | Redirects user to home page | Pass | |
-| Log Out | | | | |
-| | Click Logout button | Redirects user to logout page | Pass | Confirms logout first |
-| | Click Confirm Logout button | Redirects user to home page | Pass | |
-| Profile | | | | |
-| | Click on Profile button | User will be redirected to the Profile page | Pass | |
-| | Click on the Edit button | User will be redirected to the edit profile page | Pass | |
-| | Click on the My Orders link | User will be redirected to the My Orders page | Pass | |
-| | Brute forcing the URL to get to another user's profile | User should be given an error | Pass | Redirects user back to own profile |
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Repeat for all other tests, as applicable to your own site.
-The aforementioned tests are just an example of a few different project scenarios.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+| Main Site |  |  |  |  |
+|  | Click on Title in Navbar | Redirect / Refresh Home | Pass |  |
+|  | Click on YT Icon | YT opens in new tab | pass |  |
+|  | Click on Twitter Icon | Twitter opens in new tab | Pass |  |
+|  | Click on Insta Icon | Insta opens in new tab | Pass |  |
+|  | Hovering over the social link icons | the color of the icons change to red/blue/purple accordingly | Pass |  |
+| Sign Up |  |  |  |  |
+|  | Click on Sign Up button on main page / navbar | Redirection to Sign Up page | Pass |  |
+|  | Enter Mail Address | Only valid mail address format is accepted | Pass | "inline" error is shown if not valid |
+|  | No Mailaddress given | Mail Address is optional | Pass |  |
+|  | Enter Password (twice) | Password policy (min 8 characters, alphanumeric) must be passed | Pass | Error is shown if not valid |
+|  | Click Sign Up button | User gets redirected to collection list site | Pass | Collection list is empty since new user |
+| Log in |  |  |  |  |
+|  | Click on Login button on main page / navbar | Redirection to Login page | Pass |  |
+|  | Use wrong, non existend account | Error message gets shown | Pass |  |
+|  | Trying to access url withouth login | user gets redirected to login page | Pass |  |
+|  | Enter correct credentials and press sign in | User gets redirected to collection list site | Pass |  |
+|  | Enter wrong password | Error message gets displayed | Pass |  |
+| Log out |  |  |  |  |
+|  | Click Logout button | User gets redirected to logout page | Pass |  |
+|  | Cancel Logout on Logout page | User gets redirected to collection list | Pass |  |
+|  | Confirm Logout on Logout page | User gets redirected to main site - unauthorized | Pass |  |
+| New Collection |  |  |  |  |
+|  | Enter Collection name longer than 20 chars | Not possible to enter more chars | Pass |  |
+|  | Enter description longer than 50 chars | Not possible to enter more chars | Pass |  |
+|  | Add random file, like html for image | User will see internal server error | Pass | It is not the task of the site owner to prevent uploading wrong formats. Image formates will not cause errors |
+|  | Press cancel button when creating new collection | User gets redirected back to collection list | Pass |  |
+|  | Press save button without adding image | User will be redirected to collection list with default image | Pass |  |
+|  | Press save button with custom image | User will be redirected to cellction list with his custom image shown | Pass |  |
+|  | Press save button while having long description up to max chars | User will be redirected to collection list, description will be truncated | Pass | Full description visible in detail view |
+| Collection Manipulations |  |  |  |  |
+|  | Press collection view button with empty items | User will be redirected to collection detail view with all params and create item button displayed  | Pass |  |
+|  | Press collection view button with items | User will be redirected to collection detail view with all params and see item list | Pass |  |
+|  | Press update collection button | User redirected to collection update form | Pass |  |
+|  | Change collection name or description in edit mode and save | Fields will be updated, redirect to collection list  | Pass |  |
+|  | Change collection default image with custom and save | Image will be updated, redirect to collection list | Pass |  |
+|  | Change collection (default) image with custom and cancel | User will be redirected to collection list, changes discared | Pass |  |
+|  | Change collection (default) image via drag and drop new image to 'choose file' button | Image will be updated | Pass | This feature might be depending on browser / plattform |
+|  | Don't change anything and press cancel | User will be redirected to collection list | Pass |  |
+|  | Press collection delete button | User will be redirected to delete collection confirmation site | Pass |  |
+|  | Press collection delete button and then cancel | User will be redirected back to collection list | Pass |  |
+|  | Collection with items, press collection delete button, confirm | collection and all items will be deleted | Pass |  |
+|  | Collection without items, press collection delete button, confirm | collection will be deleted | Pass |  |
+|  | While being in collection delete confirmaton site, press any "other" button from navbar | the "to be deleted" collection remains intact, process cancelled, requested site from navbar shown| Pass |  |
+| New Item |  |  |  |  |
+|  | Enter Item name longer than 20 chars | Not possible to enter more chars | Pass |  |
+|  | Enter description longer than 50 chars | Not possible to enter more chars | Pass |  |
+|  | Add random file, like html for image | User will see internal server error | Pass | It is not the task of the site owner to prevent uploading wrong formats. Image formates will not cause errors |
+|  | Press cancel button when creating new item | User gets redirected back to collection list | Pass |  |
+|  | Press save button without adding image | User will be redirected to collection list with default image | Pass |  |
+|  | Press save button with custom image | User will be redirected to cellction list with his custom image shown | Pass |  |
+|  | Press save button while having long description up to max chars | User will be redirected to collection list, description will be truncated | Pass | Full description visible in detail view |
+|  | Press save button without adding details | User will get error message to fill in details | Pass | It is the main reason to have a description for items, would not make sense otherwise |
+| Item Manipulations |  |  |  |  |
+|  | Press item view button | User will be redirected to item detail view with all params and details | Pass |  |
+|  | Press edit item button | User redirected to item edit form | Pass |  |
+|  | Change item name or description in edit mode and save | Fields will be updated, redirect to item detail  | Pass |  |
+|  | Change item default image with custom and save | Image will be updated, redirect to item detail | Pass |  |
+|  | Change item (default) image with custom and cancel | User will be redirected to item detail, changes discared | Pass |  |
+|  | Change item (default) image via drag and drop new image to 'choose file' button | Image will be updated | Pass | This feature might be depending on browser / plattform |
+|  | Don't change anything, when pressing edit in item list view, and press cancel | User will be redirected back to item list view | Pass |  |
+|  | Don't change anything, when pressing edit in item detail view, and press cancel | User will be redirected back to item detail view | Pass |  |
+|  | Press back to collection button in item detail view | user gets redirected to item list view | Pass |  |
+|  | Press item delete button | User will be redirected to delete collection confirmation site | Pass |  |
+|  | Press item delete button and then cancel | User will be redirected back to item list | Pass |  |
+| Item Features |  |  |  |  |
+|  | Create more than 6 items in collection | Items get paginated, navigation buttons on bottom visible | Pass |  |
+|  | Create new items - sorting | newest item is first in collection | Pass |  |
+|  | Item search for name or description with match | particular item gets shown | Pass |  |
+|  | Item search for name or description without match | No search result site shown with cancel button | Pass |  |
+|  | Pressing cancel button after unsuccessful search | user comes back to item list site | Pass |  |
+|  | Item search successful, navigation back via browser or my collections button | user gets redirected either back or to collections list site | Pass | intentionally no cancel button if search successfully |
+| Contact |  |  |  |  |
+|  | Fill form with valid data and submit | submission successful, confirmation site shown | Pass |  |
+|  | Fill in form with invalid mail data | "inline" error gets showm | Pass |  |
+|  | Fill in form without message or name field | "inline" error gets showm |  |  |
+|  | Click any nav button in navbar while filling in form | requested nav button can be executed, form gets cleared | Pass |  |
+|  | Click any of the three social link icons | new tab with related plattfrom opens | Pass |  |
+|  | Hovering over the social link icons | the color of the icons change to red/blue/purple accordingly | Pass |  |
+|  | Press "Go back to the collection list" on contact confirmation site | redirect back to the collection list | Pass |  |
+|  | Press any nav button in navbar while being on contact confirmation site | redirect back to requested site | Pass |  |
+| About |  |  |  |  |
+|  | Press about link in navbar | About section is shown | Pass |  |
+|  | Click any of the three social link icons | new tab with related plattfrom opens | Pass |  |
+|  | Hovering over the social link icons | the color of the icons change to red/blue/purple accordingly | Pass |  |
+| General |  |  |  |  |
+|  | Try to guess/access "random" site inside app while being authenticated | 404 error gets shown | Pass | adding for example /winter to the url of app |
+|  | Hovering over navbar links | hover effect of changing color to "black" is visible | Pass |  |
+|  | Trying to guess/access a collection or item while being unauthenticated | redirect to sign in site | Pass | adding for example /collection/3/ to the url |
 
 ---
 
