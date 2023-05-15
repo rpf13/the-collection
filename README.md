@@ -603,9 +603,13 @@ Sample `env.py` file:
 ```python
 import os
 
-os.environ.setdefault("CLOUDINARY_URL", "user's own value")
-os.environ.setdefault("DATABASE_URL", "user's own value")
-os.environ.setdefault("SECRET_KEY", "user's own value")
+os.environ["DATABASE_URL"] = "user's own value"
+os.environ["SECRET_KEY"] = "user's own value"
+os.environ["CLOUDINARY_URL"] = "user's own value"
+os.environ["EMAIL_HOST_USER"] = "user's own value"
+os.environ["EMAIL_HOST_PASSWORD"] = "user's own value"
+os.environ["EMAIL_RECEIVE"] = "user's own value"
+
 
 # local environment only (do not include these in production/deployment!)
 os.environ.setdefault("DEBUG", "True")
