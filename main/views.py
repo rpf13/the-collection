@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 
+# Views to create proper error message handling
 def handler403(request, exception):
     """ Error Handler 403 - Forbidden Page View """
     return render(request, "errors/403.html", status=403)

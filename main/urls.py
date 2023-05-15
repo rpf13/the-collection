@@ -9,6 +9,7 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
 ]
 
+# handlers for the error sites
 handler403 = "main.views.handler403"
 handler404 = "main.views.handler404"
 handler500 = "main.views.handler500"

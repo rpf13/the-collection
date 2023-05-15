@@ -33,6 +33,7 @@ class SendEmailView(FormView):
         return super().form_valid(form)
 
 
+# Simple view for contact form success site
 @method_decorator(login_required, name='dispatch')
 class EmailSuccessView(TemplateView):
     template_name = 'contact/success.html'

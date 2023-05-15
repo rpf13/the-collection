@@ -13,7 +13,7 @@
   color: #C0C0C0;
 }
 
-/* Navbar Section*/
+/* Navbar Section modification to increase contrast*/
 .navbar-light .navbar-nav .nav-link {
   color: rgba(59, 7, 7, 0.67);
 }
@@ -183,7 +183,7 @@
   }
 }
 
-/* Adjust text card background */
+/* Adjust text card background to give more contrast */
 .text-card-mod {
   background-color: #F5F5F5;
 }
@@ -217,14 +217,13 @@
   font-size: 2rem;
 }
 
-/* Form Textarea limit to 100% width - rosponsiveness */
+/* Form Textarea limit to 100% width for responsiveness */
 form textarea {
   max-width: 100%;
 }
 
 
 /* Media Queries for small screens */
-
 @media (max-width: 800px) {
   .title-mod {
     font-size: 5rem;
