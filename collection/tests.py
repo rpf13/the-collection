@@ -33,7 +33,7 @@ class CollectionTestMixin:
         )
 
 
-# Class for tests with authenticated user
+# Class for tests with authenticated user, inheriting from mixin class
 class CollectionTestCase(CollectionTestMixin, TestCase):
     """
     Load _setup_common mixin for generic data and setup additional
@@ -222,7 +222,7 @@ class CollectionTestCase(CollectionTestMixin, TestCase):
         self.assertTemplateUsed(response, 'collection/about.html')
 
 
-# Class for tests with unauthenticated user, inheriting from parent class
+# Class for tests with unauthenticated user, inheriting from mixin class
 class UnauthenticatedCollectionTestCase(CollectionTestMixin, TestCase):
     """
     Load mixin for generic data and setup additional

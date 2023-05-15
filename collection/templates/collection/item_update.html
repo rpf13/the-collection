@@ -10,8 +10,7 @@
         {{ form.as_p }}
         <div class="d-flex justify-content-center mt-4">
           <button type="submit" class="btn btn-primary mr-3">Save changes</button>
-          <!-- <span class="btn btn-primary" onclick="history.back()">Save changes</span> -->
-          <!-- <a href="{% url 'item_detail' item.pk %}" class="btn btn-secondary">Cancel</a> -->
+          <!-- triggers browsers built in history back function -->
           <span class="btn btn-secondary" onclick="history.back()">Cancel</span>
         </div>
       </form>
