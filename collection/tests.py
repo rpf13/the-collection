@@ -269,7 +269,9 @@ class UnauthenticatedCollectionTestCase(CollectionTestMixin, TestCase):
         response = self.client.get(reverse('collection_create'))
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(
-            response, f"{reverse('account_login')}?next={reverse('collection_create')}")  # noqa
+            response,
+            f"{reverse('account_login')}?next={reverse('collection_create')}"
+        )
         self.client.force_login(self.user)
         response = self.client.get(reverse('collection_create'))
         self.assertEqual(response.status_code, 200)
