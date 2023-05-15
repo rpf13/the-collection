@@ -434,7 +434,7 @@ I have tested the functional user stories and listed in the following table, tog
 
 I have conducted a series of automated tests on my application.
 
-I have tested the "Collection" app via unit test. I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
+I have tested the "Collection" app via unit test [Collection App Unit Testing](collection/tests.py). I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
 
 ### Python (Unit Testing)
 
@@ -468,12 +468,40 @@ Below are the results from the "Collection" app on my application that I've test
 
 ![Unit Test Coverage Report](docs/testing/unit_test_coverage_report.png)
 
+The following table shows a summary of testcases executed:
+
+| Class | Function | Description | Comment |
+| --- | --- | --- | --- |
+| CollectionTestMixin |  |  | MixIn to be used for multiple classes, containing common code |
+|  | setup_common | create testcredentials and collection / items | base testdata to be used in all test |
+| CollectionTestCase |  | Used for all test with authenticated user | Mixin gets loaded |
+|  | setUp | setup params and load mixin |  |
+|  | test_home_view_authenticated | User gets redirected to collection list |  |
+|  | test_collection_list_view_authenticated | Test accessing collection_list of pre-created test collection |  |
+|  | test_collection_create_view_authenticated | Test creating a new collection, check proper redirect, make sure the new collection can be found |  |
+|  | test_collection_detail_view_authenticated | Test accessing collection detail view, which displays items in the collection. Pre-Created testdata will be used. |  |
+|  | test_collection_update_view_authenticated | Test updating a collection, verify update has been executed and verify proper redirect to collection_list |  |
+|  | test_collection_delete_view_authenticated | Test deleting a collection. GET request to the collection and verify 200. Assert correct collection delete template. POST request for deleting the collection and check response, which is 302, redirected to collection list. Verify if collection still exists or not. |  |
+|  | test_collection_detail_view_authenticated | Test accessing collection details of pre-created test collection |  |
+|  | test_item_detail_view_authenticated | Test accessing the item details of pre-created test collection and test item |  |
+|  | test_item_create_view_authenticated | Test creating a new item in the collection, which is built in the setUp check that the item exists after creating. Ckeck if correct 302 redirect to collection_detail happens after creation |  |
+|  | test_item_update_view_authenticated | Test updating an existing item, which has been created during setUp in the collection, which has been created during setUp. Verify the fields are all updated and that the correct 302 to item detail gets shown. |  |
+|  | test_item_delete_view_authenticated | Test deleting an item. GET request to the item and verify 200. Assert correct item delete template. POST request for deleting the item and check response, which is 302, redirected to collection detail. Verify if item still exists or not. |  |
+|  | test_about_view_authenticated | Test about site with pre created user. Simple test to check 200 state |  |
+| UnauthenticatedCollectionTestCase |  | Used for all test with authenticated user  | Mixin gets loaded |
+|  | setUp | setup params and load mixin |  |
+|  | test_home_view_unauthenticated | Test home view for unauthenticated user user gets directed to home |  |
+|  | test_collection_create_view_unauthenticated | Test if unauth. user accessing collection_create gets redirected to login site. Includes next parameter to state where user should be redirected after login. |  |
+|  | test_collection_create_view_login_and_redirect | Test if unauth. user accessing collection_create gets redirected to login site. User gets logged in with setUp credentials and check if collection_create can be accessed after login. f-string is used to create expected url, combined with next parameter. |  |
+
 ---
 
 ## Bugs
 
 ### GitHub **Issues**
 
+I did use GitHub Issues to track all my work, as already explained in the Agile Development section of the README. Below a snapshot with an excerpt:
+![Github Issues](docs/testing/github_issues.png)
 I have tracked my bugs via a `bug` label in github issues, opened them as stories and added them to the kanban board.
 Since I did start from the beginning to deploy my project to Heroku, I did continuously verify the state of the application. Furthermore, each feature was locally tested, before / just after commit. Therefore I could fix most of the issues during the development phase. I did not open bugs when discovering an issue while being still on the development face of that particular feature.
 
@@ -487,6 +515,8 @@ Since I did start from the beginning to deploy my project to Heroku, I did conti
 
 When writing / submitting my project for assessment, there were no open issues, bugs I am aware of. However, the epic with the stretch items / future features is still in the open state. Such epics, stories got the `WontHave` tag during MoSCoW priorisation. 
 Any remaining open issues can be tracked [here](https://github.com/rpf13/the-collection/issues).
+For the `WontHave` Epic and their potential user stories, the following snapshot shows the current state. This is basically the only Epic left open, after submitting this project.
+![Github Stretch Epic](docs/testing/github_stretch_epic.png)
 
 ## Unfixed Bugs
 
