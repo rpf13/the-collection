@@ -95,5 +95,13 @@
     {% block footer %}
     {% endblock %}
 
+    <!-- JS to limit file format for images on client side -->
+    <script>
+        const filePicker = document.querySelector('input[type="file"]');
+        if (filePicker) {
+            filePicker.setAttribute('accept', 'image/*');
+        }
+    </script>
+
 </body>
 </html>
