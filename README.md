@@ -83,6 +83,8 @@ Link to deployed site: [The Collection](https://the-collection-rpf13.herokuapp.c
     - Implement a feature to tag, label individual items
     - Enhance the search to a dynamic live search. Will require JS and further modifications.
     - User can update his profile - enhance the profile icon in the navbar with functionality that the user can update, delete his own profile.
+    - For paginated collections, display the page number of paginated pages, instead of only prev / next
+    - Advanced server & client side image file verification for uploading an image
 
 ---
 

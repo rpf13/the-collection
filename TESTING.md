@@ -69,6 +69,15 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 ---
 
+### JavaScript
+
+I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files / content. I do have only a very small piece of JS code embedded in my base.html template.
+This JS code is a simple client side verification, which limits the user to upload only images, the image picker will only show images. I do understand that this is a very simple, client side only verification and that it could be improved via server side verification. This advanced check is added to the "Features left to implement" section.
+Neverthless, I did check it with jshint and did not find an error:
+![JSHint Validation](docs/testing/jshint_base.png) 
+
+---
+
 ### Python
 
 I have used the recommended [CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
