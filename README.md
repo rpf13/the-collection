@@ -1,7 +1,7 @@
 # The Collection
 The Collection is a site, which allows a registered user to create and easily manage collections of his beloved items.
 
-The application satisfies the demand for a simple solution, to easily inventory individual things in a beautifully designed cataloge. This can be, for example, a collection of weapons, a collection of model cars or very practical things, such as spare parts for motorcycles. Everything is possible!
+The application satisfies the demand for a simple solution, to easily inventory individual things, in a beautifully designed catalogue. This can be, for example, a collection of weapons, a collection of model cars or very practical things, such as spare parts for motorcycles. Everything is possible!
 
 A Collection consists of multiple individual items, where each item can be described and images can be uploaded to make the catalog more appealing.
 A search function gives the user the possibility to find the item of his desire inside a collection.
@@ -218,6 +218,7 @@ Django AllAuth is used to create a user authentication system.
 
 - The Footer consists of the Youtube, Twitter and Instagram FontAwesome icon
 - The Footer is only visible on the landing page, the contact and the about page
+- It has been kept intentionally just below the content of the individual sites, not at the very bottom, since that would look kind of displaced and disconnected from the other content.
 - Hovering over the icons, will change their color respectively to their original color
 - Clicking on them, will open the respective site in a new tab
 
@@ -253,7 +254,7 @@ Django AllAuth has been installed and the Django templates for SignUp, Login and
 
 ![Logout](docs/images/feat_logout.png)
 
-- Logout lets the user Sign Out, asking for confirmation to do so.
+- Sign Out lets the user logout, asking for confirmation to do so.
 - Cancel button will bring him back to his content.
 
 ### My Collections
@@ -668,7 +669,6 @@ I have done lots of research, especially on the Django side, to create this proj
 | [Code with Mosh](https://codewithmosh.com/p/the-ultimate-django-series) | The Ultimate Django Series | Besides CI content, I have used this very great course from Mosh to get a better understanding of Django. Buying this extensive course has helped me a lot in my journey for this project. |
 | [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
 | [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
-| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
 | [Cloudinary](https://pypi.org/project/django-cloudinary-storage/) | settings | how to setup cloudinary |
 | [AllAuth](https://django-allauth.readthedocs.io/en/latest/) | Authentication | Django Allauth Documentation |
 | [Read The Docs](https://docs.djangoproject.com/en/4.1/topics/auth/default/#the-loginrequired-mixin) | Allauth | Using the Django authentication system |
@@ -681,7 +681,7 @@ I have done lots of research, especially on the Django side, to create this proj
 | [Django Docs](https://docs.djangoproject.com/en/3.2/ref/models/querysets/#field-lookups) | Query Set | Query Set API Reference |
 | [Django Docs](https://docs.djangoproject.com/en/3.2/topics/db/queries/#complex-lookups-with-q-objects) | Q objects | Making complex lookups with Q objects |
 | [Django Docs](https://docs.djangoproject.com/en/3.2/topics/pagination/) | Pagination | Django Pagination Class |
-| [Mailtrap.io Blocg](https://mailtrap.io/blog/django-contact-form/) | Contact Form | How to create a Django contact form blog, was the base to build my contact form |
+| [Mailtrap.io Blog](https://mailtrap.io/blog/django-contact-form/) | Contact Form | How to create a Django contact form blog, was the base to build my contact form |
 | [Django Docs](https://docs.djangoproject.com/en/3.2/topics/forms/) | Forms | Working with Django forms |
 | [Django Docs](https://docs.djangoproject.com/en/3.2/topics/class-based-views/generic-editing/) | Forms | Form handling with Django CBV |
 | [Django Docs](https://docs.djangoproject.com/en/3.2/topics/email/) | Mail Form | Django sending emails |
@@ -711,6 +711,8 @@ I have used the following resources and articles for creating my Unit Testing fo
 
 ### Content
 
+I have used the following code resources and used / modified them in my project.
+
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Codepen](https://codepen.io/alvarotrigo/pen/dyzgOER) | Background | This codepen has been the source for the gradient, floating background |
@@ -736,4 +738,4 @@ I have used the following explicit media files in the project
 - The biggest motivation and critical feedback, I got from my mentor Tim Nelson. A very big THANK YOU Tim, for giving me guidance, technical advice but also motivation to not give up and always try to get the best out of everything. You are such an awesome human being!!!
 - A big Thank you to Ed Bradley from Code Institute team, who has helped me with a few very nasty issues in the project
 - I also want to thank Daisy Mc Girr, Mentor at Code Institute, for being such an inspiring and supportive person in the CI Slack community, but also for producing awesome Django content on her [Youtube](https://www.youtube.com/@IonaFrisbee) channel.
-- A big thank you also goes to the awesome Code Institute Slack community, who was alway very supportive!
+- A big thank you also goes to the awesome Code Institute Slack community, who was always very supportive!

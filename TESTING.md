@@ -457,7 +457,7 @@ All testcases are successfully executed:
 
 ![Unit Test Collection App](docs/testing/unit_test_summary.png)
 
-To create the coverage report, I would then run the following commands after first installing the coverage pacakge via pip:
+To create the coverage report, I would then run the following commands after first installing the coverage package via pip:
 
 `pip3 install coverage`
 
